@@ -1,17 +1,8 @@
-hy2://123456789StrongPass@144.31.224.14:443?insecure=1&sni=eh.vk.com&type=tcp&upmbps=10&downmbps=50#117-1🇳🇱🇺🇸
-hy2://123456789StrongPass@144.31.224.14:443?insecure=1&sni=eh.vk.com&type=tcp&allowInsecure=1&upmbps=10&downmbps=50#117-2🇳🇱🇺🇸
-hy2://123456789StrongPass@144.31.224.14:443?security=tls&insecure=1&sni=eh.vk.com#117-3🇳🇱🇺🇸
-hy2://123456789StrongPass@144.31.224.14:443?sni=eh.vk.com&insecure=1&allowInsecure=1#117-4🇳🇱🇺🇸
-hy2://123456789StrongPass@144.31.224.14:443/?insecure=1&sni=www.cloudflare.com#114-1🇳🇱🇺🇸
-hy2://123456789StrongPass@144.31.224.14:443/?insecure=1&amp&sni=www.cloudflare.com#114-2🇳🇱🇺🇸
-hy2://123456789StrongPass@144.31.224.14:443/?insecure=1&sni=www.cloudflare.com#114-3🇳🇱🇺🇸
-hy2://123456789StrongPass@144.31.224.14:443?insecure=1&allowInsecure=1#114-4🇳🇱🇺🇸
-hy2://123456789StrongPass@144.31.224.14:443?security=tls&allowInsecure=true#114-5🇳🇱🇺🇸
-hy2://123456789StrongPass@144.31.224.14:443?security=tls&sni=www.cloudflare.com&allowInsecure=true#114-6🇳🇱🇺🇸
-hy2://123456789StrongPass@144.31.224.14:443?upmbps=10&downmbps=50&security=tls&sni=eh.@solidtrust.com&allowInsecure=true#114-7🇳🇱🇺🇸
-hy2://123456789StrongPass@144.31.224.14:443?sni=www.cloudflare.com&insecure=1&allowInsecure=1#114-8🇳🇱🇺🇸
-hy2://123456789StrongPass@144.31.224.14:443/?insecure=1&sni=www.cloudflare.com#114-9🇳🇱🇺🇸
-hy2://123456789StrongPass@144.31.224.14:443?security=tls&insecure=1&sni=eh.vk.com#114-10🇳🇱🇺🇸
+
+
+
+
+hy2://zhangyang@130.61.50.75:6443/?insecure=1&sni=dash.cloudflare.com#112-0
 hy2://zhangyang@130.61.50.75:6443/?insecure=1&sni=dash.cloudflare.com#112-1🇳🇱🇺🇸
 hy2://zhangyang@130.61.50.75:6443?sni=dash.cloudflare.com&insecure=1#112-2🇳🇱🇺🇸
 hy2://zhangyang@130.61.50.75:6443/?insecure=1&amp;sni=dash.cloudflare.com#112-3🇳🇱🇺🇸
@@ -22,7 +13,6 @@ hy2://48b36b6a-eaa6-4843-9231-0bb8b38b5da5@usa-hy2.onetaplink.app:443?sni=hy2-us
 hy2://dongtaiwang.com@62.210.124.146:22000/?insecure=1&sni=www.microsoft.com#121-1
 hy2://dongtaiwang.com@62.210.124.146:22000?security=tls&insecure=1&sni=www.microsoft.com#121-2
 hy2://dongtaiwang.com@62.210.124.146:22000?sni=www.microsoft.com&insecure=1&allowInsecure=1#121-3
-hy2://123456789StrongPass@144.31.224.14:443/?insecure=1&sni=www.cloudflare.com#125
 hy2://b688ce0f-9201-4e8e-a67a-f3be2c6aa201@de.mjhy2.com:1443?insecure=1&sni=de.mjhy2.com#127
 hy2://ea8d14d4-ca12-4cd1-bcad-f0fa72f6eadc@212.193.18.60:8443/?insecure=1#101🇳🇱🇺🇸
 hy2://2c833c5d-cbcc-4afb-89ba-d17dc39db6f0@75.127.13.83:47974?sni=www.bing.com#101🇳🇱🇺🇸
@@ -46,11 +36,4 @@ hy2://b4bd0613-ff7c-4f2f-954d-185915e6ddad@5.175.249.174:35000?security=tls&obfs
 hy2://b4bd0613-ff7c-4f2f-954d-185915e6ddad@206.71.158.40:35000/?sni= #120
 hy2://dongtaiwang.com@62.210.30.179:40022?sni=www.microsoft.com&insecure=1&mport=41000-42000#124
 hy2://ea8d14d4-ca12-4cd1-bcad-f0fa72f6eadc@212.193.18.60:8443/?insecure=1#126
-hy2://123456789StrongPass@144.31.224.14:443?insecure=1&sni=eh.vk.com&type=tcp&allowInsecure=1&upmbps=10&downmbps=50#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands%20%5BSNI-RU%5D%20eh.vk.com
-hy2://123456789StrongPass@144.31.224.14:443?insecure=1&sni=eh.vk.com&type=tcp&upmbps=10&downmbps=50#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands%20%5BSNI-RU%5D%20eh.vk.com
-hy2://123456789StrongPass@144.31.224.14:443?security=tls&insecure=1&sni=eh.vk.com#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands%20%5BSNI-RU%5D%20eh.vk.com
-hy2://123456789StrongPass@144.31.224.14:443?insecure=1&sni=eh.vk.com&type=tcp&upmbps=10&downmbps=50#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands%20%5BSNI-RU%5D%20eh.vk.com
-hy2://123456789StrongPass@144.31.224.14:443?security=tls&insecure=1&sni=eh.vk.com#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands%20%5BSNI-RU%5D%20eh.vk.com
-hy2://4d092122-268a-4a1a-b23f-83931c5abc3a@37.114.49.38:2056/?insecure=1&sni=flkf.mangshe.xyz#🍏91@oneclickvpnkeys
-hy2://zhangyang@130.61.50.75:6443/?insecure=1&sni=dash.cloudflare.com#%F0%9F%8C%BB31@oneclickvpnkeys
-hy2://github.com%2FAlvin9999-newpac%2Ffanqiang@83.243.86.103:12855/?insecure=1&sni=www.microsoft.com#%F0%9F%8C%BB32@oneclickvpnkeys
+hy2://github.com%2FAlvin9999-newpac%2Ffanqiang@83.243.86.103:12855/?insecure=1&sni=www.microsoft.com#%127
