@@ -15,10 +15,11 @@ hy2://123456789StrongPass@144.31.224.14:443?security=tls&insecure=1&sni=eh.vk.co
 hy2://123456789StrongPass@144.31.224.14:443?insecure=1&sni=eh.vk.com&type=tcp&upmbps=10&downmbps=50#16
 hy2://123456789StrongPass@144.31.224.14:443?security=tls&insecure=1&sni=eh.vk.com#17
 hy2://123456789StrongPass@144.31.224.14:443/?insecure=1&sni=www.cloudflare.com#18
-hy2://123456789StrongPass@144.31.224.14:443?insecure=1#34
-hy2://123456789StrongPass@144.31.224.14:443?security=tls&allowInsecure=true#35
-hy2://123456789StrongPass@144.31.224.14:443?security=tls&sni=www.cloudflare.com&allowInsecure=true#36
-hy2://123456789StrongPass@144.31.224.14:443/?insecure=1&sni=www.cloudflare.com#47
+hy2://123456789StrongPass@144.31.224.14:443?insecure=1#19
+hy2://123456789StrongPass@144.31.224.14:443/?insecure=1&sni=www.cloudflare.com#20
+hy2://123456789StrongPass@144.31.224.14:443?security=tls&allowInsecure=true#21
+hy2://123456789StrongPass@144.31.224.14:443?security=tls&sni=www.cloudflare.com&allowInsecure=true#22
+hy2://123456789StrongPass@144.31.224.14:443/?insecure=1&sni=www.cloudflare.com#23
 hy2://Telegram--%3E%40Ln2Ray@206.71.158.23:45000/?insecure=1&sni=gavazn.55994421.xyz&obfs=salamander&obfs-password=Telegram--%3E%40Ln2Ray#1001_🇳🇱🇺🇸_TG1
 hy2://Telegram--%3E%40Ln2Ray@gavazn.lnmarketplace.net:45000/?insecure=1&sni=gavazn.55994421.xyz&obfs=salamander&obfs-password=Telegram--%3E%40Ln2Ray#1002_🇳🇱🇺🇸_TG2
 hy2://Telegram--%3E%40Ln2Ray@206.71.158.23:45000/?insecure=1&sni=gavazn.55994421.xyz&obfs=salamander&obfs-password=Telegram--%3E%40Ln2Ray#1003_🇳🇱🇺🇸_TG3
