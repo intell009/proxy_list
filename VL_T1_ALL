@@ -9,20 +9,3 @@ vless://12a3c993-e2f1-4ebb-b622-d67e546f34e5@hetzner.spectrum.vu:443?type=tcp&se
 vless://76713d07-5a6b-49c2-abd8-bc450a2fa7fc@hetzner.spectrum.vu:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=chrome&pbk=joMQZiNZWpGdcKDBOyAJQMnvSfU54GYUqqP_NwUtHAo&sid=a1b2c3d4&sni=www.microsoft.com#🇫🇮 0031V
 vless://776e8267-345d-4673-c3a7-53790540f082@166.1.131.6:20447?encryption=none&flow=xtls-rprx-vision&security=reality&sni=cloudcdn-m9-14.cdn.yandex.net&fp=chrome&pbk=DnnQOtWhilZ3rqlSip0spBkluYlPeydouSR3iklbPTs&packetEncoding=xudp#🇸🇪 0032V
 vless://e679aa5e-fde0-4e9f-ad46-63725e1c47f3@new-de.vcfco.ir:7500?security=reality&encryption=none&pbk=8a3blVdAACDlvRA5zrdNxHLZ9boU5QkwGMkf0WwyZVI&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=cdn77.com&sid=77a3a1c829040294# 0033V
-
-
-vless://74d3057f-5d2b-4d21-8819-3b387d47c0a4@5.188.224.166:2083?encryption=none&type=grpc&security=reality&mode=gun&serviceName=UpdateService&fp=chrome&sni=ir.ozone.ru&pbk=J6NuOlIq3ypdTFc1TMhDDKmF8BWPnNWZq1EkxD7K-lQ&sid=6da16b1335651b38#0001|G|🇷🇺|-
-vless://f993de15-4cc2-49bb-b64b-2d248687b819@5.188.224.166:2083?encryption=none&type=grpc&security=reality&mode=gun&serviceName=UpdateService&fp=chrome&sni=ir.ozone.ru&pbk=J6NuOlIq3ypdTFc1TMhDDKmF8BWPnNWZq1EkxD7K-lQ&sid=6da16b1335651b38#0002|G|🇷🇺|-
-vless://52a4263d-2ad0-452d-a669-c2d2776f4c34@5.188.224.166:2083?encryption=none&type=grpc&security=reality&mode=gun&serviceName=UpdateService&fp=chrome&sni=ir.ozone.ru&pbk=J6NuOlIq3ypdTFc1TMhDDKmF8BWPnNWZq1EkxD7K-lQ&sid=6da16b1335651b38#0003|G|🇷🇺|-
-vless://f6b71e78-e065-4cf8-9fbb-b9e25ff67eff@5.188.224.166:2083?encryption=none&type=grpc&security=reality&mode=gun&serviceName=UpdateService&fp=chrome&sni=ir.ozone.ru&pbk=J6NuOlIq3ypdTFc1TMhDDKmF8BWPnNWZq1EkxD7K-lQ&sid=6da16b1335651b38#0004|G|🇷🇺|-
-vless://60ae82da-f839-4125-aa1e-3df0e2a5c30c@5.188.224.166:2083?encryption=none&type=grpc&security=reality&mode=gun&serviceName=UpdateService&fp=chrome&sni=ir.ozone.ru&pbk=J6NuOlIq3ypdTFc1TMhDDKmF8BWPnNWZq1EkxD7K-lQ&sid=6da16b1335651b38#0005|G|🇷🇺|-
-vless://74d3057f-5d2b-4d21-8819-3b387d47c0a4@5.188.224.69:2083?encryption=none&type=grpc&security=reality&mode=gun&serviceName=UpdateService&fp=chrome&sni=ir.ozone.ru&pbk=J6NuOlIq3ypdTFc1TMhDDKmF8BWPnNWZq1EkxD7K-lQ&sid=6da16b1335651b38#0006|G|🇷🇺|-
-vless://52a4263d-2ad0-452d-a669-c2d2776f4c34@5.188.224.69:2083?encryption=none&type=grpc&security=reality&mode=gun&serviceName=UpdateService&fp=chrome&sni=ir.ozone.ru&pbk=J6NuOlIq3ypdTFc1TMhDDKmF8BWPnNWZq1EkxD7K-lQ&sid=6da16b1335651b38#0007|G|🇷🇺|-
-vless://f6b71e78-e065-4cf8-9fbb-b9e25ff67eff@5.188.224.69:2083?encryption=none&type=grpc&security=reality&mode=gun&serviceName=UpdateService&fp=chrome&sni=ir.ozone.ru&pbk=J6NuOlIq3ypdTFc1TMhDDKmF8BWPnNWZq1EkxD7K-lQ&sid=6da16b1335651b38#0008|G|🇷🇺|-
-vless://f993de15-4cc2-49bb-b64b-2d248687b819@5.188.224.69:2083?encryption=none&type=grpc&security=reality&mode=gun&serviceName=UpdateService&fp=chrome&sni=ir.ozone.ru&pbk=J6NuOlIq3ypdTFc1TMhDDKmF8BWPnNWZq1EkxD7K-lQ&sid=6da16b1335651b38#0009|G|🇷🇺|-
-vless://74d3057f-5d2b-4d21-8819-3b387d47c0a4@5.188.224.73:2083?encryption=none&type=grpc&security=reality&mode=gun&serviceName=UpdateService&fp=chrome&sni=ir.ozone.ru&pbk=J6NuOlIq3ypdTFc1TMhDDKmF8BWPnNWZq1EkxD7K-lQ&sid=6da16b1335651b38#0010|G|🇷🇺|-
-vless://f993de15-4cc2-49bb-b64b-2d248687b819@5.188.224.73:2083?encryption=none&type=grpc&security=reality&mode=gun&serviceName=UpdateService&fp=chrome&sni=ir.ozone.ru&pbk=J6NuOlIq3ypdTFc1TMhDDKmF8BWPnNWZq1EkxD7K-lQ&sid=6da16b1335651b38#0011|G|🇷🇺|-
-vless://f6b71e78-e065-4cf8-9fbb-b9e25ff67eff@5.188.224.73:2083?encryption=none&type=grpc&security=reality&mode=gun&serviceName=UpdateService&fp=chrome&sni=ir.ozone.ru&pbk=J6NuOlIq3ypdTFc1TMhDDKmF8BWPnNWZq1EkxD7K-lQ&sid=6da16b1335651b38#0012|G|🇷🇺|-
-vless://9a7771e6-ac9a-4474-8a50-d5b685da8471@158.160.105.148:443?flow=xtls-rprx-vision&encryption=none&type=tcp&security=reality&fp=random&sni=id.x5.ru&pbk=OCRYYq4e92sQ-wWFRX6WX9pdvuFBWOqybLhpSiv3nFA&sid=111111#0013|V|🇷🇺|-
-
-
