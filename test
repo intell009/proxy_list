@@ -1,3 +1,552 @@
-vless://76713d07-5a6b-49c2-abd8-bc450a2fa7fc@hetzner.spectrum.vu:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=chrome&pbk=joMQZiNZWpGdcKDBOyAJQMnvSfU54GYUqqP_NwUtHAo&sid=a1b2c3d4&sni=www.microsoft.com#0220|V|🇳🇱|
-vless://12a3c993-e2f1-4ebb-b622-d67e546f34e5@hetzner.spectrum.vu:443?type=tcp&security=reality&sni=www.microsoft.com&fp=chrome&pbk=joMQZiNZWpGdcKDBOyAJQMnvSfU54GYUqqP_NwUtHAo&sid=a1b2c3d4&flow=xtls-rprx-vision#0243|R|🇳🇱|
-vless://8ab4644d-5b36-47e2-911a-cacb89b0ec0c@64.188.77.42:443?encryption=none&type=grpc&serviceName=vk.push.v1.PushNotificationService&mode=gun&security=reality&sni=vk.com&fp=chrome&pbk=Duxwa0WD9RhAy4EsGdWgo2ALlOUWGfZ2KCVLKEP_214&sid=6d1e4c8f#0246|R|🇳🇱|
+# ============================================================
+#   PIPELINE v3.12 HEAVY-MODE
+#   Strict A + Extended TLS + Strict ALPN + HEAD + Progress
+#   50 threads, tuned timeouts
+#   Trust-tail rename logic
+# ============================================================
+
+Write-Host "[INIT] Pipeline v3.11 heavy-mode starting..." -ForegroundColor Cyan
+
+# ------------------------------------------------------------
+#  TRUST-TAIL FLAG DETECTOR
+# ------------------------------------------------------------
+
+function Extract-ExistingFlag {
+    param([string]$line)
+
+    if ($line -match '#.*?(🇦🇺|🇦🇹|🇧🇪|🇧🇬|🇧🇷|🇨🇦|🇨🇭|🇨🇿|🇩🇪|🇩🇰|🇪🇸|🇪🇪|🇪🇺|🇫🇮|🇫🇷|🇬🇧|🇬🇷|🇭🇷|🇭🇺|🇮🇪|🇮🇸|🇮🇹|🇱🇻|🇱🇹|🇱🇺|🇳🇱|🇳🇴|🇵🇱|🇵🇹|🇷🇴|🇷🇺|🇷🇸|🇸🇪|🇸🇮|🇸🇰|🇺🇸)') {
+        return $Matches[1]
+    }
+
+    $map = @{
+        "russia"="🇷🇺"; "ru"="🇷🇺";
+        "germany"="🇩🇪"; "de"="🇩🇪";
+        "france"="🇫🇷"; "fr"="🇫🇷";
+        "netherlands"="🇳🇱"; "nl"="🇳🇱";
+        "sweden"="🇸🇪"; "se"="🇸🇪";
+        "finland"="🇫🇮"; "fi"="🇫🇮";
+        "latvia"="🇱🇻"; "lv"="🇱🇻";
+        "lithuania"="🇱🇹"; "lt"="🇱🇹";
+        "estonia"="🇪🇪"; "ee"="🇪🇪";
+        "norway"="🇳🇴"; "no"="🇳🇴";
+        "poland"="🇵🇱"; "pl"="🇵🇱";
+        "spain"="🇪🇸"; "es"="🇪🇸";
+        "italy"="🇮🇹"; "it"="🇮🇹";
+        "portugal"="🇵🇹"; "pt"="🇵🇹";
+    }
+
+    foreach ($k in $map.Keys) {
+        if ($line -match "#.*?$k") {
+            return $map[$k]
+        }
+    }
+
+    return $null
+}
+
+function Get-FinalFlag {
+    param([string]$rawLine)
+    $existing = Extract-ExistingFlag $rawLine
+    if ($existing) { return $existing }
+    return ""
+}
+
+# ------------------------------------------------------------
+#  TRANSPORT LETTER
+# ------------------------------------------------------------
+
+function Get-TransportLetter {
+    param($o)
+
+    if ($o.Security -eq 'reality') {
+        if ($o.Type -eq 'grpc') { return 'G' }
+        if ($o.IsVision)        { return 'V' }
+        return 'R'
+    }
+    return 'X'
+}
+
+# ------------------------------------------------------------
+#  SAFE NAME REWRITE
+# ------------------------------------------------------------
+
+function Rewrite-Name {
+    param([string]$line, [string]$suffix)
+
+    if ($line.Contains("#")) {
+        $base = $line.Substring(0, $line.IndexOf("#"))
+    } else {
+        $base = $line
+    }
+
+    return "$base#$suffix"
+}
+
+# ------------------------------------------------------------
+#  PARSER / QUERY / HOSTNAME
+# ------------------------------------------------------------
+
+function Parse-Query {
+    param($query)
+    $result = @{}
+    if (-not $query) { return $result }
+
+    foreach ($pair in $query -split '&') {
+        if ($pair -match '=') {
+            $k, $v = $pair -split '=', 2
+            try { $v = [System.Net.WebUtility]::UrlDecode($v) } catch {}
+            $result[$k] = $v
+        }
+    }
+    return $result
+}
+
+function Is-ValidHostName {
+    param($HostName)
+    if (-not $HostName) { return $false }
+    if ($HostName -notmatch '^[a-zA-Z0-9\.\-
+
+\[\]
+
+:]+$') { return $false }
+    return $true
+}
+
+function Parse-HostPort {
+    param($hostPort)
+
+    if (-not $hostPort) { return $null }
+
+    if ($hostPort -match '^
+
+\[(.+)\]
+
+:(\d+.*)$') {
+        $HostName = $Matches[1]
+        $PortRaw  = $Matches[2]
+    }
+    else {
+        $HostName, $PortRaw = $hostPort -split ':', 2
+    }
+
+    if (-not $HostName -or -not $PortRaw) { return $null }
+
+    $PortNumber = ($PortRaw -replace '[^0-9]', '')
+    if (-not $PortNumber) { return $null }
+
+    if (-not (Is-ValidHostName $HostName)) { return $null }
+
+    return [PSCustomObject]@{
+        HostName=$HostName
+        Port=[int]$PortNumber
+    }
+}
+
+function Parse-VlessLine {
+    param($line)
+
+    if ($line -notmatch '^vless://') { return $null }
+
+    $raw = $line.Trim()
+    $line = $line.Trim()
+
+    $parts = $line -replace '^vless://', '' -split '@'
+    if ($parts.Count -ne 2) { return $null }
+
+    $id   = $parts[0]
+    $rest = $parts[1]
+
+    $hostPort, $queryPart = $rest -split '\?', 2
+    $hp = Parse-HostPort $hostPort
+    if (-not $hp) { return $null }
+
+    $query = Parse-Query $queryPart
+
+    return [PSCustomObject]@{
+        Raw=$raw
+        Id=$id
+        HostName=$hp.HostName
+        Port=$hp.Port
+        Query=$query
+        Security=$query["security"]
+        Type=$query["type"]
+        Flow=$query["flow"]
+        Mode=$query["mode"]
+        SNI=$query["sni"]
+        FP=$query["fp"]
+        PBK=$query["pbk"]
+        IsVision=($query["flow"] -eq "xtls-rprx-vision")
+    }
+}
+
+# ------------------------------------------------------------
+#  LOAD + PARSE + DEDUP
+# ------------------------------------------------------------
+
+Write-Host "[LOAD] Reading input.txt..."
+
+$inputLines = Get-Content "input.txt" -Encoding UTF8 | Where-Object { $_.Trim() -ne "" }
+
+Write-Host "[LOAD] $($inputLines.Count) lines loaded."
+
+$parsed = foreach ($line in $inputLines) {
+    $o = Parse-VlessLine $line
+    if ($o) { $o }
+}
+
+Write-Host "[PARSE] Parsed: $($parsed.Count)"
+
+$dedup = $parsed | Sort-Object HostName,Port,Id,Security,Type,Flow,SNI,FP,PBK -Unique
+
+Write-Host "[DEDUP] Unique: $($dedup.Count)"
+
+$filtered = $dedup | Where-Object { $_.Security -eq 'reality' }
+
+Write-Host "[FILTER] Reality: $($filtered.Count)"
+
+$targets = $filtered | Sort-Object HostName,Port
+
+Write-Host "[TARGETS] Count: $($targets.Count)"
+
+# ------------------------------------------------------------
+#  HEAVY-MODE CHECK (50 THREADS, EXTENDED TLS + ALPN + HEAD)
+# ------------------------------------------------------------
+
+Write-Host "[CHECK] Starting heavy-mode v3.11 (50 threads, extended TLS + ALPN strict + HEAD)..."
+
+Add-Type -AssemblyName System.Collections
+
+$pool = [runspacefactory]::CreateRunspacePool(1,50)
+$pool.Open()
+
+$jobs = New-Object System.Collections.ArrayList
+
+$total = $targets.Count
+$global:done = 0
+$global:aliveCount = 0
+$global:deadCount  = 0
+$startTime = Get-Date
+
+foreach ($o in $targets) {
+    $ps = [powershell]::Create()
+    $ps.RunspacePool = $pool
+
+    $null = $ps.AddScript({
+        param($HostName, $Port, $SNI)
+
+        function Test-TCP {
+            param($h, $p, $timeout)
+            try {
+                $client = New-Object System.Net.Sockets.TcpClient
+                $iar = $client.BeginConnect($h, $p, $null, $null)
+                if (-not $iar.AsyncWaitHandle.WaitOne($timeout)) {
+                    $client.Close()
+                    return $false
+                }
+                $client.EndConnect($iar)
+                $client.Close()
+                return $true
+            } catch {}
+            return $false
+        }
+
+        function Test-HEAD {
+            param($h, $p, $sni, $timeout)
+
+            try {
+                $client = New-Object System.Net.Sockets.TcpClient
+                $iar = $client.BeginConnect($h, $p, $null, $null)
+                if (-not $iar.AsyncWaitHandle.WaitOne($timeout)) {
+                    $client.Close()
+                    return $false
+                }
+                $client.EndConnect($iar)
+
+                $stream = $client.GetStream()
+                $writer = New-Object System.IO.StreamWriter($stream)
+                $writer.Write("HEAD / HTTP/1.1`r`nHost: $sni`r`nConnection: close`r`n`r`n")
+                $writer.Flush()
+
+                $buffer = New-Object byte[] 128
+                $read = $stream.Read($buffer, 0, 128)
+                $client.Close()
+
+                if ($read -gt 0) {
+                    $text = [System.Text.Encoding]::ASCII.GetString($buffer, 0, $read)
+                    if ($text -match "HTTP") { return $true }
+                }
+            } catch {}
+
+            return $false
+        }
+
+        function Test-TLS-Extended {
+            param($h, $p, $timeout)
+
+            # Extended ClientHello with ALPN extension
+            $helloHex = "16030100dc010000d803035f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f000020cca9cca8c02fc02bc030c02cc013c009c014c00a009f009e006b006a003d003c0035002f000a0100007a000000170000ff01000100000a00080006001d00170018000b00020100000d00140012040308040401050308050501080606010201002300000010000e000c02683208687474702f312e31000500050100000000000f000101"
+            $bytes = -split ($helloHex -replace '..', '$& '), ' ' | Where-Object { $_ -ne "" } | ForEach-Object { [Convert]::ToByte($_,16) }
+
+            try {
+                $client = New-Object System.Net.Sockets.TcpClient
+                $iar = $client.BeginConnect($h, $p, $null, $null)
+                if (-not $iar.AsyncWaitHandle.WaitOne($timeout)) {
+                    $client.Close()
+                    return $false
+                }
+                $client.EndConnect($iar)
+
+                $stream = $client.GetStream()
+                $stream.Write($bytes, 0, $bytes.Length)
+
+                $buffer = New-Object byte[] 2048
+                $read = $stream.Read($buffer, 0, 2048)
+                $client.Close()
+
+                if ($read -lt 5) { return $false }
+
+                # TLS record header
+                $contentType = $buffer[0]
+                $versionMajor = $buffer[1]
+                $versionMinor = $buffer[2]
+
+                if ($contentType -ne 22) { return $false } # handshake
+                if ($versionMajor -ne 3) { return $false } # TLS1.x
+
+                # Check for alert
+                if ($contentType -eq 21) { return $false }
+
+                return $true
+            } catch {}
+
+            return $false
+        }
+
+        function Test-ALPN {
+            param($h, $p, $timeout)
+
+            # Minimal ALPN ClientHello
+            $helloHex = "16030100dc010000d803035f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f000020cca9cca8c02fc02bc030c02cc013c009c014c00a009f009e006b006a003d003c0035002f000a0100007a000000170000ff01000100000a00080006001d00170018000b00020100000d00140012040308040401050308050501080606010201002300000010000e000c02683208687474702f312e31"
+            $bytes = -split ($helloHex -replace '..', '$& '), ' ' | Where-Object { $_ -ne "" } | ForEach-Object { [Convert]::ToByte($_,16) }
+
+            try {
+                $client = New-Object System.Net.Sockets.TcpClient
+                $iar = $client.BeginConnect($h, $p, $null, $null)
+                if (-not $iar.AsyncWaitHandle.WaitOne($timeout)) {
+                    $client.Close()
+                    return $false
+                }
+                $client.EndConnect($iar)
+
+                $stream = $client.GetStream()
+                $stream.Write($bytes, 0, $bytes.Length)
+
+                $buffer = New-Object byte[] 4096
+                $read = $stream.Read($buffer, 0, 4096)
+                $client.Close()
+
+                if ($read -lt 10) { return $false }
+
+                $text = [BitConverter]::ToString($buffer,0,$read)
+
+                # Strict ALPN: must contain h2 or http/1.1
+                if ($text -match "68-32" -or $text -match "68-74-74-70-2F-31-2E-31") {
+                    return $true
+                }
+
+                return $false
+            } catch {}
+
+            return $false
+        }
+
+         $alive = $false
+
+        $alive = $false
+
+        # 1) FAST TCP — 59 ms (без изменений)
+        if (Test-TCP $HostName $Port 59) { $alive = $true }
+        Start-Sleep -Milliseconds 80
+
+        # 2) SLOW TCP — 5000 ms
+        if (-not $alive) {
+            if (Test-TCP $HostName $Port 5000) { $alive = $true }
+        }
+        Start-Sleep -Milliseconds 80
+
+        # 3) HEAD PROBE — 3000 ms
+        if (-not $alive) {
+            if (Test-HEAD $HostName $Port $SNI 3000) { $alive = $true }
+        }
+        Start-Sleep -Milliseconds 80
+
+        # 4) EXTENDED TLS — 7000 ms
+        if (-not $alive) {
+            if (Test-TLS-Extended $HostName $Port 7000) { $alive = $true }
+        }
+        Start-Sleep -Milliseconds 80
+
+        # 5) STRICT ALPN — 7000 ms
+        if (-not $alive) {
+            if (Test-ALPN $HostName $Port 7000) { $alive = $true }
+        }
+        Start-Sleep -Milliseconds 80
+
+        # 6) TCP AFTER TLS — 3000 ms
+        if (-not $alive) {
+            if (Test-TCP $HostName $Port 3000) { $alive = $true }
+        }
+
+        return [PSCustomObject]@{
+            HostName=$HostName
+            Port=$Port
+            Alive=$alive
+        }
+
+
+    }).AddArgument($o.HostName).AddArgument($o.Port).AddArgument($o.SNI)
+
+    $handle = $ps.BeginInvoke()
+    $jobs.Add([PSCustomObject]@{
+        PS=$ps
+        Handle=$handle
+        Obj=$o
+    }) | Out-Null
+}
+
+Write-Host "[CHECK] Waiting for results..."
+
+$alive = New-Object System.Collections.Generic.List[object]
+$dead  = New-Object System.Collections.Generic.List[object]
+
+# ----------------------------
+#  COLLECT RESULTS + PROGRESS
+# ----------------------------
+
+foreach ($j in $jobs) {
+    $result = $j.PS.EndInvoke($j.Handle)
+    $j.PS.Dispose()
+
+    if ($result.Alive) {
+        $alive.Add($j.Obj)
+        $global:aliveCount++
+    }
+    else {
+        $dead.Add($j.Obj)
+        $global:deadCount++
+    }
+
+    $global:done++
+
+    if ($global:done -eq 1 -or $global:done % 20 -eq 0 -or $global:done -eq $total) {
+        $elapsed = (Get-Date) - $startTime
+        $sec = [math]::Max($elapsed.TotalSeconds, 0.1)
+        $speed = [math]::Round($global:done / $sec, 1)
+        $percent = [math]::Round(($global:done / $total) * 100, 1)
+        $etaSec = [math]::Round(($total - $global:done) / $speed, 1)
+
+        Write-Host ("[PROGRESS] {0}% | {1}/{2} | ALIVE: {3} | DEAD: {4} | {5} cfg/s | ETA ~{6}s" -f `
+            $percent, $global:done, $total, $global:aliveCount, $global:deadCount, $speed, $etaSec)
+    }
+}
+
+$pool.Close()
+
+Write-Host "[CHECK] Alive: $($alive.Count), Dead: $($dead.Count)" -ForegroundColor Cyan
+
+# ----------------------------
+#  SORT BY TRANSPORT
+# ----------------------------
+
+function Sort-ByTransport {
+    param($list)
+    return $list | Sort-Object @{
+        Expression = {
+            switch (Get-TransportLetter $_) {
+                'G' {1}
+                'V' {2}
+                'R' {3}
+                default {9}
+            }
+        }
+    }, HostName, Port
+}
+
+$aliveSorted = Sort-ByTransport $alive
+$deadSorted  = Sort-ByTransport $dead
+
+# ----------------------------
+#  RU/EU SPLIT
+# ----------------------------
+
+function Is-Russian {
+    param($o)
+
+    $h = $o.HostName.ToLower()
+
+    if ($h -match '\.ru$') { return $true }
+
+    if ($o.Raw -match '#(.+)$') {
+        $tag = $Matches[1].ToLower()
+        if ($tag -match 'ru|rus|russia') { return $true }
+    }
+
+    return $false
+}
+
+$finalEU   = New-Object System.Collections.Generic.List[string]
+$finalRU   = New-Object System.Collections.Generic.List[string]
+$finalDead = New-Object System.Collections.Generic.List[string]
+
+# ----------------------------
+#  BUILD ALIVE LISTS
+# ----------------------------
+
+Write-Host "[FINAL] Building alive lists..."
+
+$counter=1
+foreach ($o in $aliveSorted) {
+    $num = "{0:D4}" -f $counter
+    $t = Get-TransportLetter $o
+
+    if (Is-Russian $o) {
+        $flag = "🇷🇺"
+        $suffix = "$num|$t|$flag|"
+        $finalRU.Add( (Rewrite-Name $o.Raw $suffix) )
+    }
+    else {
+        $flag = Get-FinalFlag $o.Raw
+        $suffix = "$num|$t|$flag|"
+        $finalEU.Add( (Rewrite-Name $o.Raw $suffix) )
+    }
+
+    $counter++
+}
+
+# ----------------------------
+#  BUILD DEAD LIST
+# ----------------------------
+
+Write-Host "[FINAL] Building dead list..."
+
+$counter=1
+foreach ($o in $deadSorted) {
+    $num = "{0:D4}" -f $counter
+    $t = Get-TransportLetter $o
+    $flag = Get-FinalFlag $o.Raw
+    $suffix = "$num|$t|$flag|-"
+    $finalDead.Add( (Rewrite-Name $o.Raw $suffix) )
+    $counter++
+}
+
+# ----------------------------
+#  WRITE OUTPUT FILES
+# ----------------------------
+
+Write-Host "[WRITE] Writing output files..."
+
+$finalEU    | Set-Content "final_eu.txt"   -Encoding UTF8
+$finalRU    | Set-Content "final_ru.txt"   -Encoding UTF8
+$finalDead  | Set-Content "final_dead.txt" -Encoding UTF8
+
+Write-Host "[DONE] Pipeline v3.11 heavy-mode complete." -ForegroundColor Green
