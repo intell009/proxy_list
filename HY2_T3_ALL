@@ -1,8 +1,17 @@
 ### 🇩🇪 Germany
-hysteria2://hysteria_master_password@72.56.122.195:443?headerType=none&encryption=none&sni=www.bing.com&insecure=1#0018|🇩🇪|
-hysteria2://4d092122-268a-4a1a-b23f-83931c5abc3a@37.114.49.38:2056?headerType=none&encryption=none&insecure=1#0022|🇩🇪|
-hysteria2://github.com%2FAlvin9999-newpac%2Ffanqiang@83.243.86.103:12855?encryption=none&sni=www.microsoft.com&insecure=1#0025|🇩🇪|
-hysteria2://github.com%2FAlvin9999-newpac%2Ffanqiang@178.18.147.66:29900?headerType=none&encryption=none&sni=www.microsoft.com&insecure=1#0026|🇩🇪|
+hysteria2://hysteria2_fastlane_kdi433t42:8141c9502ggDKXTIfMc6Qr0l0dXhcRzJ@150.241.79.106:1935?sni=de2.h.fastlanehosting.ru#0001|🇩🇪|-
+hysteria2://github.com%2FAlvin9999-newpac%2Ffanqiang@178.18.147.66:29900?headerType=none&encryption=none&sni=www.microsoft.com&insecure=1#0010|🇩🇪|-
+hysteria2://4d092122-268a-4a1a-b23f-83931c5abc3a@37.114.49.38:2056?headerType=none&encryption=none&insecure=1#0013|🇩🇪|-
+hysteria2://hysteria_master_password@72.56.122.195:443?headerType=none&encryption=none&sni=www.bing.com&insecure=1#0014|🇩🇪|-
+hysteria2://github.com%2FAlvin9999-newpac%2Ffanqiang@83.243.86.103:12855?encryption=none&sni=www.microsoft.com&insecure=1#0015|🇩🇪|-
 
 ### 🇫🇷 France
-hysteria2://github.com%2FAlvin9999-newpac%2Ffanqiang@83.243.86.103:38563?insecure=1&sni=www.microsoft.com#0027|🇫🇷|
+hysteria2://dongtaiwang.com@163.172.113.118:40022?headerType=none&encryption=none&sni=www.microsoft.com&insecure=1#0002|🇫🇷|-
+hysteria2://dongtaiwang.com@163.172.113.118:41211?insecure=1&sni=www.microsoft.com&mport=41283%2C40022%2C41000#0003|🇫🇷|-
+hysteria2://dongtaiwang.com@163.172.113.118:41283?insecure=1&sni=www.microsoft.com#0004|🇫🇷|-
+hysteria2://dongtaiwang.com@163.172.113.118:41581?insecure=1&sni=www.microsoft.com&mport=41211%2C41283%2C40022%2C41000-42000#0005|🇫🇷|-
+hysteria2://dongtaiwang.com@163.172.113.118:41689?insecure=1&sni=www.microsoft.com&mport=41283%2C41283%2C40022%2C41000-42000#0006|🇫🇷|-
+hysteria2://dongtaiwang.com@163.172.113.118:41763?insecure=1&sni=www.microsoft.com#0007|🇫🇷|-
+hysteria2://dongtaiwang.com@163.172.113.118:41947?insecure=1&sni=www.microsoft.com&mport=41283%2C41283%2C40022%2C41000#0008|🇫🇷|-
+hysteria2://dongtaiwang.com@163.172.113.118:41984?insecure=1&sni=www.microsoft.com&mport=41211%2C41283%2C40022%2C41000-42000#0009|🇫🇷|-
+hysteria2://github.com%2FAlvin9999-newpac%2Ffanqiang@83.243.86.103:38563?insecure=1&sni=www.microsoft.com#0016|🇫🇷|-
