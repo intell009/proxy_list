@@ -78,8 +78,8 @@ vless://f8f2449f-ef26-44e9-971d-31c408f3a00f@158.160.53.176:443?encryption=none&
 
 ### Italy
 
-vless://7b13eaac-882d-43a0-b19e-6d2e867d624e@158.160.43.3:443?encryption=none&type=grpc&security=reality&mode=gun&fp=chrome&sni=ads.x5.ru&pbk=h7CCbT_1gwxhQGM-4_pZkNRbAe_I6YFQM6jO9x6uORw#0069|G|🇮🇹|
-vless://7b13eaac-882d-43a0-b19e-6d2e867d624e@158.160.43.3:443?type=grpc&security=reality&fp=chrome&pbk=h7CCbT_1gwxhQGM-4_pZkNRbAe_I6YFQM6jO9x6uORw&sni=1c.ru#0070|G|🇮🇹|
+vless://7b13eaac-882d-43a0-b19e-6d2e867d624e@158.160.43.3:443?encryption=none&type=grpc&security=reality&mode=gun&fp=chrome&sni=ads.x5.ru&pbk=h7CCbT_1gwxhQGM-4_pZkNRbAe_I6YFQM6jO9x6uORw#0069|G|🇨🇭|
+vless://7b13eaac-882d-43a0-b19e-6d2e867d624e@158.160.43.3:443?type=grpc&security=reality&fp=chrome&pbk=h7CCbT_1gwxhQGM-4_pZkNRbAe_I6YFQM6jO9x6uORw&sni=1c.ru#0070|G|🇨🇭|
 vless://aa5bfdcc-96cf-4427-a70b-367a4fa0b8e0@84.201.129.122:443?flow=xtls-rprx-vision&encryption=none&type=tcp&security=reality&fp=chrome&sni=ads.x5.ru&pbk=eodJ8kadQnxPLUO8mGekiJHHKERYn4-kGyM1bx1Hchk&sid=e4466dc44a35e806#0071|V|🇮🇹|
 
 ### Lithuania
