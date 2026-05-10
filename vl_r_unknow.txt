@@ -1,10 +1,10 @@
-############################## ALIVE ##############################
+============================= ALIVE =============================
 
-### France 🇫🇷 =======================================
+### France 🇫🇷 
 
 vless://72cfe84b-f84f-4211-a7a2-7eb013a08674@89.208.113.196:443?flow=xtls-rprx-vision&encryption=none&type=tcp&security=reality&fp=chrome&sni=www.yahoo.com&pbk=5kJyRKIuU0yIsJiQPnI8YFvP_1d9nNB09RXcEBVy9hU&sid=12345678#0001|V|🇫🇷|
 
-### Germany =======================================
+### Germany 
 
 vless://3a3f672d-1161-42b2-bff7-d43b345c7298@5.188.114.44:443?encryption=none&fp=chrome&pbk=h6gpE3mCwKFwTx7nn_hAtAIF1pHFIuXWdNVyYrokqkI&security=reality&sid=dcbaae96dfd126d0&sni=max.ru&type=grpc#0002|R|🇩🇪|
 vless://3a3f672d-1161-42b2-bff7-d43b345c7298@5.188.114.44:443?encryption=none&type=grpc&security=reality&mode=gun&fp=firefox&sni=max.ru&pbk=h6gpE3mCwKFwTx7nn_hAtAIF1pHFIuXWdNVyYrokqkI&sid=dcbaae96dfd126d0#0003|G|🇩🇪|
