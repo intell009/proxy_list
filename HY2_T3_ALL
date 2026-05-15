@@ -54,3 +54,26 @@ hysteria2://4d092122-268a-4a1a-b23f-83931c5abc3a@37.114.49.38:2056?headerType=no
 hysteria2://4d092122-268a-4a1a-b23f-83931c5abc3a@37.114.49.38:2056?security=tls&insecure=1&sni=flkf.mangshe.xyz#🇳🇱-0054
 hysteria2://ef6a309e-c300-4907-92a4-f2869eba4be6@92.112.124.13:10802/?insecure=1&sni=www.bing.com#%🇳🇱-0055
 hysteria2://ef6a309e-c300-4907-92a4-f2869eba4be6@92.112.124.13:10802?headerType=none&encryption=none&sni=www.bing.com&insecure=1#🇳🇱-0056
+
+hysteria2://4d092122-268a-4a1a-b23f-83931c5abc3a@37.114.49.38:2056/?insecure=1&sni=flkf.mangshe.xyz#%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20715797
+hysteria2://6286105c-fb6d-11ef-be96-f23c93136cb3@cc65f71a-t4v9c0-t5waci-4550.la.shifen.uk:1743?security=tls&insecure=0&sni=cc65f71a-t4v9c0-t5waci-4550.la.shifen.uk#All-@V2rayAlpha--46
+hysteria2://661ce23b-7fe9-4217-8abe-76c28b687691@finprem.nimarko.org:443?alpn=h3&insecure=0&sni=finprem.nimarko.org#%F0%9F%87%AB%F0%9F%87%AE%20Finland%2C%20Helsinki%20%7C%20%5BBL%5D
+hysteria2://661ce23b-7fe9-4217-8abe-76c28b687691@finprem.nimarko.org:443?headerType=none&encryption=none&sni=finprem.nimarko.org&alpn=h3&insecure=0#%F0%9F%87%AB%F0%9F%87%AE%20Finland%2C%20Helsinki%20%7C%20%5BBL%5D
+hysteria2://661ce23b-7fe9-4217-8abe-76c28b687691@finprem.nimarko.org:443?headerType=none&encryption=none&sni=finprem.nimarko.org&insecure=0#%F0%9F%87%AB%F0%9F%87%AE%20Finland%2C%20Helsinki%20%7C%20%5BBL%5D
+hysteria2://661ce23b-7fe9-4217-8abe-76c28b687691@nd.nimarko.org:443?alpn=h3&insecure=0&sni=nd.nimarko.org#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands%2C%20Eygelshoven%20%7C%20%5BBL%5D
+hysteria2://661ce23b-7fe9-4217-8abe-76c28b687691@nd.nimarko.org:443?headerType=none&encryption=none&sni=nd.nimarko.org&alpn=h3&insecure=0#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands%2C%20Eygelshoven%20%7C%20%5BBL%5D
+hysteria2://661ce23b-7fe9-4217-8abe-76c28b687691@nd.nimarko.org:443?headerType=none&encryption=none&sni=nd.nimarko.org&insecure=0#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands%2C%20Eygelshoven%20%7C%20%5BBL%5D
+hysteria2://661ce23b-7fe9-4217-8abe-76c28b687691@nd.nimarko.org:443?insecure=0&sni=nd.nimarko.org#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands%2C%20Eygelshoven%20%7C%20%5BBL%5D
+hysteria2://661ce23b-7fe9-4217-8abe-76c28b687691@pols.nimarko.org:4443?alpn=h3&insecure=0&sni=pols.nimarko.org#%F0%9F%87%B5%F0%9F%87%B1%20Poland%2C%20Warsaw%20%28Mokot%C3%B3w%29%20%7C%20%5BBL%5D
+hysteria2://661ce23b-7fe9-4217-8abe-76c28b687691@pols.nimarko.org:4443?headerType=none&encryption=none&sni=pols.nimarko.org&alpn=h3&insecure=0#%F0%9F%87%B5%F0%9F%87%B1%20Poland%2C%20Warsaw%20%28Mokot%C3%B3w%29%20%7C%20%5BBL%5D
+hysteria2://661ce23b-7fe9-4217-8abe-76c28b687691@pols.nimarko.org:4443?headerType=none&encryption=none&sni=pols.nimarko.org&insecure=0#%F0%9F%87%B5%F0%9F%87%B1%20Poland%2C%20Warsaw%20%28Mokot%C3%B3w%29%20%7C%20%5BBL%5D
+hysteria2://661ce23b-7fe9-4217-8abe-76c28b687691@pols.nimarko.org:4443?sni=pols.nimarko.org#%F0%9F%87%B5%F0%9F%87%B1%20Poland%2C%20Warsaw%20%28Mokot%C3%B3w%29%20%7C%20%5BBL%5D
+hysteria2://71504eaf-29ac-4190-89d1-dd9ce2c9ee14@[2001:bc8:1640:50eb:dc00:ff:fe57:dd6f]:443?security=tls&obfs=salamander&obfs-password=FnFgQIckcMRtKq7i&insecure=1&mport=50000-60000&sni=Ab.ac#🇳🇱
+hysteria2://0f771058-7892-4d46-b77e-a69e811b9cbc@84.201.25.156:443/?insecure=1&sni=hls-svod.itunes.apple.com#🇩🇪 Germany | TLS
+hysteria2://github.com%2FAlvin9999-newpac%2Ffanqiang@178.18.147.66:29900/?insecure=1&sni=www.microsoft.com#🇩🇪 Germany | TLS
+hysteria2://qQe1z5kU8kN6SlKnDt9Ru3Qp@vpn-uk-002.fastervpn.world:443?insecure=1&sni=vpn-uk-002.fastervpn.world#%F0%9F%87%AC%F0%9F%87%A7GB_1%7C2.1MB%2Fs%7CGPT%E2%81%BA%7CYT-GB%7CNF%7C3%25
+hysteria2://strong-secret-pass-777@2.56.172.83:444/?insecure=1&obfs=salamander&obfs-password=cry_me_a_r1ver_2026&sni=www.microsoft.com#🇨🇾 Cyprus | TLS • Salamander
+hysteria2://hysteria2_fastlane_qdx4o19um%3Ae6RGEpPpn2oiHxqlbReEFpJZr09OiVlb@150.241.79.106:1935/?insecure=1&sni=de2.h.fastlanehosting.ru#🇩🇪 Germany | TLS
+hysteria2://4d092122-268a-4a1a-b23f-83931c5abc3a@37.114.49.38:2056/?insecure=1&sni=flkf.mangshe.xyz#🇩🇪 Germany | TLS
+hysteria2://rstnnl%3AhrQVPjgUr9HTgKyTj0oFCr6j4EpRzXTQ@reddeadfan.rd-team.ru:2026/?insecure=1&obfs=salamander&obfs-password=FxZylbqClUqVqAs2nezW9kPyFb2edZ2&sni=reddeadfan.rd-team.ru#🇧🇬 Bulgaria | TLS • Salamander
+
