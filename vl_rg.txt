@@ -1,26 +1,5 @@
 ﻿###########_ALIVE_############
 
-########_CIS
-
-###_Russia_🇷🇺
-
-vless://c4d69096-4026-4da5-9485-20a3da91cb14@186.246.4.81:443?security=reality&type=grpc&mode=gun&serviceName=grpc&sni=www.aviasales.com&fp=chrome&sid=c42e8eee&pbk=d24ax4dGUXqJMY0a4_2W_Y5SbEH2XrrQ3_AcxGa4QFw#🇷🇺-0001
-#🇷🇺-0001
-
-########_EU
-
-###_Germany_🇩🇪
-
-vless://cbc27e56-38a1-4b0d-bce3-f9e7dcb807a4@89.208.208.92:7443?encryption=none&type=grpc&security=reality&mode=gun&serviceName=grpc&fp=chrome&sni=loadtest.dev.urent.ru&pbk=_AXs-QnufIq918tbb2pwM3MDbe7kQ6i0cIHDMLwPmGs&sid=3210e0eee6605048#🇩🇪-0001
-#🇩🇪-0001
-
-###_Netherlands_🇳🇱
-
-vless://a9266144-169e-4653-b58a-0456f2ef6a13@51.250.70.71:443?type=grpc&security=reality&fp=chrome&pbk=0a3d38cwnQfUM7EqjEinf1XUZyKdzgiuRMayO3LcYl0&sid=35debf0dc757d053&sni=max.ru&mode=gun&serviceName=max.ru#🇳🇱-0001
-#🇳🇱-0001
-vless://a9266144-169e-4653-b58a-0456f2ef6a13@51.250.70.71:443?type=grpc&security=reality&fp=chrome&pbk=0a3d38cwnQfUM7EqjEinf1XUZyKdzgiuRMayO3LcYl0&sid=35debf0dc757d053&sni=static.rutube.ru&mode=gun&serviceName=static.rutube.ru#🇳🇱-0002
-#🇳🇱-0002
-
 ###########_UNSTABLE_############
 
 ###########_DEAD_############

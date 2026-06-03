@@ -4,24 +4,40 @@
 
 ###_Russia_🇷🇺
 
-vless://17451fec-af94-4715-8c2f-7f6839130d0a@spb-node.datamove.online:2040?type=tcp&headerType=none&security=reality&encryption=none&sni=tradingview.com&fp=qq&pbk=LidllyozUeeSbuzJ0ZfieGoy8YjVzqXX9H2m9whPaG0&sid=53197c66aef53c44&spx=%2F#🇷🇺-0001
+vless://633f424e-2b11-48da-a6b3-a849dd71456f@45.12.75.242:26424?encryption=none&type=tcp&security=reality&fp=chrome&sni=ya.ru&pbk=l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0&sid=23103e1e#🇷🇺-0001
 #🇷🇺-0001
+vless://17451fec-af94-4715-8c2f-7f6839130d0a@5.8.10.39:2040?security=reality&sni=tradingview.com&type=tcp&fp=qq&pbk=LidllyozUeeSbuzJ0ZfieGoy8YjVzqXX9H2m9whPaG0&sid=53197c66aef53c44#🇷🇺-0002
+#🇷🇺-0002
+vless://17451fec-af94-4715-8c2f-7f6839130d0a@spb-node.datamove.online:2040?type=tcp&headerType=none&security=reality&encryption=none&sni=tradingview.com&fp=qq&pbk=LidllyozUeeSbuzJ0ZfieGoy8YjVzqXX9H2m9whPaG0&sid=53197c66aef53c44&spx=%2F#🇷🇺-0003
+#🇷🇺-0003
 
 ########_EU
 
+###_Finland_🇫🇮
+
+vless://ccc21efc-42e7-481f-8873-82c051507f3f@176.109.101.215:8083?encryption=none&type=tcp&security=reality&fp=qq&sni=ads.x5.ru&pbk=Z84J2IelR9ch3k8VtlVhhs5ycBUlXA7wHBWcBrjqnAw&sid=7dbf7d3233971d5c#🇫🇮-0001
+#🇫🇮-0001
+
 ###_Germany_🇩🇪
 
-vless://17451fec-af94-4715-8c2f-7f6839130d0a@108.165.174.228:2040?security=reality&sni=tradingview.com&type=tcp&fp=qq&pbk=LidllyozUeeSbuzJ0ZfieGoy8YjVzqXX9H2m9whPaG0&sid=53197c66aef53c44#🇩🇪-0001
+vless://17451fec-af94-4715-8c2f-7f6839130d0a@212.113.104.219:2040?type=tcp&security=reality&encryption=none&sni=tradingview.com&fp=qq&pbk=LidllyozUeeSbuzJ0ZfieGoy8YjVzqXX9H2m9whPaG0&sid=53197c66aef53c44&headerType=none&allowInsecure=1#🇩🇪-0001
 #🇩🇪-0001
-vless://17451fec-af94-4715-8c2f-7f6839130d0a@108.165.32.239:2040?security=reality&sni=tradingview.com&type=tcp&fp=qq&pbk=LidllyozUeeSbuzJ0ZfieGoy8YjVzqXX9H2m9whPaG0&sid=53197c66aef53c44#🇩🇪-0002
+vless://17451fec-af94-4715-8c2f-7f6839130d0a@96.126.129.195:2040?security=reality&encryption=none&pbk=LidllyozUeeSbuzJ0ZfieGoy8YjVzqXX9H2m9whPaG0&headerType=none&fp=chrome&type=tcp&sni=tradingview.com&sid=53197c66aef53c44#🇩🇪-0002
 #🇩🇪-0002
-vless://17451fec-af94-4715-8c2f-7f6839130d0a@212.113.104.219:2040?type=tcp&security=reality&encryption=none&sni=tradingview.com&fp=qq&pbk=LidllyozUeeSbuzJ0ZfieGoy8YjVzqXX9H2m9whPaG0&sid=53197c66aef53c44&headerType=none&allowInsecure=1#🇩🇪-0003
+vless://17451fec-af94-4715-8c2f-7f6839130d0a@auto.datamove.online:2040?type=tcp&headerType=none&security=reality&encryption=none&sni=tradingview.com&fp=qq&pbk=LidllyozUeeSbuzJ0ZfieGoy8YjVzqXX9H2m9whPaG0&sid=53197c66aef53c44&spx=%2F#🇩🇪-0003
 #🇩🇪-0003
+vless://17451fec-af94-4715-8c2f-7f6839130d0a@germ-node.datamove.online:2040?security=reality&encryption=none&pbk=LidllyozUeeSbuzJ0ZfieGoy8YjVzqXX9H2m9whPaG0&headerType=none&fp=chrome&spx=/&type=tcp&sni=tradingview.com&sid=53197c66aef53c44#🇩🇪-0004
+#🇩🇪-0004
 
 ###_Poland_🇵🇱
 
-vless://301d514e-4aa0-47b0-ba44-a0cb891cd52f@89.126.229.40:443?fp=chrome&headertype=none&pbk=OZVjfQBboTDTBw0baMFqzVPsVUI4FNQmspTEb0b0zW4&security=reality&sid=a1b2c3d4&sni=www.samsung.com&type=tcp#🇵🇱-0001
+vless://ccc21efc-42e7-481f-8873-82c051507f3f@176.109.101.215:8444?encryption=none&type=tcp&security=reality&fp=qq&sni=ads.x5.ru&pbk=Z84J2IelR9ch3k8VtlVhhs5ycBUlXA7wHBWcBrjqnAw&sid=7dbf7d3233971d5c#🇵🇱-0001
 #🇵🇱-0001
+
+###_Switzerland_🇨🇭
+
+vless://301d514e-4aa0-47b0-ba44-a0cb891cd52f@45.85.93.51:443?security=reality&type=tcp&headerType=&path=&host=&sni=www.samsung.com&fp=chrome&pbk=OZVjfQBboTDTBw0baMFqzVPsVUI4FNQmspTEb0b0zW4&sid=a1b2c3d4#🇨🇭-0001
+#🇨🇭-0001
 
 ###########_UNSTABLE_############
 
