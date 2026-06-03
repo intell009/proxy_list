@@ -4,14 +4,6 @@
 
 ###_Russia_🇷🇺
 
-vless://2397be53-f62b-42f7-80fe-5d22627c03a9@185.241.194.34:5987?flow=xtls-rprx-vision&encryption=none&type=tcp&security=reality&fp=chrome&sni=surfvpn24.ru&pbk=L4kWgoTxqQc4kAGLrF_ARMRVMPy3_WInhjwt_8OPenU&sid=c19de8fa#🇷🇺-0001
-#🇷🇺-0001
-vless://2397be53-f62b-42f7-80fe-5d22627c03a9@185.241.194.34:5994?flow=xtls-rprx-vision&encryption=none&type=tcp&security=reality&fp=chrome&sni=surfvpn24.ru&pbk=trrVBG2fDc411qxZQ8__7x6ZlJC4lI2m_mwl-O-BEjQ&sid=c19de8fa#🇷🇺-0002
-#🇷🇺-0002
-vless://6e84b643-1c90-41e7-9028-ce4dea28c21c@pro-ru-84.emrata.top:443?type=tcp&security=reality&sni=ads.x5.ru&fp=firefox&flow=xtls-rprx-vision&pbk=AAZjVvbC7AwPKot_1ygO5VMpN7XYifCA7lG0RNR5sEk#🇷🇺-0003
-#🇷🇺-0003
-vless://ed98e66d-5dbe-4b6d-9032-250e61eaf53f@ru01.lumixvpn.org:443?type=tcp&headerType=none&security=reality&encryption=none&sni=ru01.lumixvpn.org&fp=qq&pbk=Ue7Oj8rvr0gqV6725tCKE6XTVcnwmK1fGwSqphSzsAg&sid=7027a8fa0d47317d&flow=xtls-rprx-vision#🇷🇺-0004
-#🇷🇺-0004
 
 ########_EU
 
