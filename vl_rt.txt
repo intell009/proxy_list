@@ -17,8 +17,6 @@ vless://17451fec-af94-4715-8c2f-7f6839130d0a@108.165.32.239:2040?security=realit
 #🇩🇪-0002
 vless://17451fec-af94-4715-8c2f-7f6839130d0a@212.113.104.219:2040?type=tcp&security=reality&encryption=none&sni=tradingview.com&fp=qq&pbk=LidllyozUeeSbuzJ0ZfieGoy8YjVzqXX9H2m9whPaG0&sid=53197c66aef53c44&headerType=none&allowInsecure=1#🇩🇪-0003
 #🇩🇪-0003
-vless://17451fec-af94-4715-8c2f-7f6839130d0a@96.126.129.195:2040?security=reality&type=tcp&packetEncoding=none&allowInsecure=1&sni=tradingview.com&fp=qq&sid=53197c66aef53c44&pbk=LidllyozUeeSbuzJ0ZfieGoy8YjVzqXX9H2m9whPaG0#🇩🇪-0004
-#🇩🇪-0004
 
 ###_Poland_🇵🇱
 
