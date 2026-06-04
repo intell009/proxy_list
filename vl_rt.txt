@@ -1,15 +1,11 @@
 ﻿###########_ALIVE_############
 
-########_CIS
-
-###_Russia_🇷🇺
-
-vless://17451fec-af94-4715-8c2f-7f6839130d0a@5.8.10.39:2040?security=reality&sni=tradingview.com&type=tcp&fp=qq&pbk=LidllyozUeeSbuzJ0ZfieGoy8YjVzqXX9H2m9whPaG0&sid=53197c66aef53c44#🇷🇺-0001
-#🇷🇺-0001
-vless://17451fec-af94-4715-8c2f-7f6839130d0a@94.241.168.123:2040?security=reality&type=tcp&sni=tradingview.com&fp=qq&sid=53197c66aef53c44&pbk=LidllyozUeeSbuzJ0ZfieGoy8YjVzqXX9H2m9whPaG0&encryption=none#🇷🇺-0002
-#🇷🇺-0002
-
 ########_EU
+
+###_Finland_🇫🇮
+
+vless://abe3cb91-cf7e-468d-8c4e-6cbf61cab495@176.109.101.215:8083?encryption=none&type=tcp&security=reality&fp=qq&sni=ads.x5.ru&pbk=Z84J2IelR9ch3k8VtlVhhs5ycBUlXA7wHBWcBrjqnAw&sid=7dbf7d3233971d5c#🇫🇮-0001
+#🇫🇮-0001
 
 ###_France_🇫🇷
 
