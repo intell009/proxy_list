@@ -7,20 +7,6 @@
 vless://76713d07-5a6b-49c2-abd8-bc450a2fa7fc@down.spectrumproxy.shop:443?mode=gun&type=grpc&security=reality&sni=down.spectrumproxy.shop&fp=chrome&pbk=ckd_LwbbFo8BYf9vT84B20P6EL1n6vl2yMxoXc6X4SA&sid=a1c1d7e2f9b3&serviceName=vless#🇫🇷-0001
 #🇫🇷-0001
 
-###_Norway_🇳🇴
-
-vless://7841aff6-8552-4f8e-ad0c-06c3b73e6440@5.42.102.157:443?encryption=none&type=grpc&security=reality&mode=gun&serviceName=moktana.net.v1.StreamService&fp=chrome&sni=us.moktana.app&pbk=_yzmX8WwaZJD4ddVgOZWJsx6r0lJzhTrTbkQLhwiWXk&sid=c8540a3e9e1d8136#🇳🇴-0001
-#🇳🇴-0001
-vless://7841aff6-8552-4f8e-ad0c-06c3b73e6440@usr.moktana.app:443?security=reality&type=grpc&mode=gun&serviceName=moktana.net.v1.StreamService&sni=us.moktana.app&fp=chrome&sid=c8540a3e9e1d8136&pbk=_yzmX8WwaZJD4ddVgOZWJsx6r0lJzhTrTbkQLhwiWXk&encryption=none#🇳🇴-0002
-#🇳🇴-0002
-
-###_Poland_🇵🇱
-
-vless://fa4d12f8-4d4f-4fdf-a8a6-7ced1db6cf91@185.16.36.163:43439?security=reality&type=grpc&mode=gun&serviceName=ws&sni=www.amd.com&fp=chrome&sid=84d5e248cb91dca0&pbk=b4n1pcO8ST3JkGtj8YymXVrW17LEe2EHec5wY7hMMR4#🇵🇱-0001
-#🇵🇱-0001
-vless://fa4d12f8-4d4f-4fdf-a8a6-7ced1db6cf91@cl-1.perecm.ru:43439?security=reality&type=grpc&mode=gun&serviceName=ws&sni=www.amd.com&fp=chrome&sid=84d5e248cb91dca0&pbk=b4n1pcO8ST3JkGtj8YymXVrW17LEe2EHec5wY7hMMR4#🇵🇱-0002
-#🇵🇱-0002
-
 ###########_UNSTABLE_############
 
 ###########_DEAD_############
