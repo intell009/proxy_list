@@ -2,24 +2,10 @@
 
 ########_EU
 
-###_Netherlands_🇳🇱
-
-vless://69a2af58-d74a-44ca-864a-e09b493f4274@185.245.40.251:443?type=tcp&security=reality&pbk=YnBpu8Ul3-HHnTEq4YGz6i9uZVQE6a-fW1LcSs55sDg&fp=firefox&sni=sun6-20.userapi.com&sid=1cc0b0#🇳🇱-0001
-#🇳🇱-0001
-vless://a2415a12-3f92-4636-9823-9828d3ceb818@185.245.40.251:443?type=tcp&security=reality&pbk=YnBpu8Ul3-HHnTEq4YGz6i9uZVQE6a-fW1LcSs55sDg&fp=firefox&sni=sun6-20.userapi.com&sid=1cc0b0#🇳🇱-0002
-#🇳🇱-0002
-
 ###_Poland_🇵🇱
 
-vless://0fdbacfb-428b-4d49-adb4-dd629e7c52e2@185.68.185.212:50029?security=reality&type=tcp&allowInsecure=1&sni=www.nvidia.com&fp=chrome&sid=4e7f150d&pbk=7f483yCE9Bohsk5FkHta5FYQF0BN96EzAHoUuEACB3I#🇵🇱-0001
+vless://1b9e301d-cecd-4eb1-8b36-eef811c2696d@155.212.182.19:443?encryption=none&type=tcp&security=reality&fp=chrome&sni=wildberries.ru&pbk=A7g4cVaB6_5cmIrGbv-PmkVpS4pvHWp2HfLZbjv-SDQ&sid=5e841fab#🇵🇱-0001
 #🇵🇱-0001
-vless://8c91104d-0fc1-000a-9a03-0bfada9d589e@217.16.19.110:443?fp=firefox&pbk=Mkxs9LT0tRg208EbLXmP-_dQYlsPOgaTwZ3acwgVVWs&security=reality&sni=api-maps.yandex.ru&type=tcp#🇵🇱-0002
-#🇵🇱-0002
-
-###_Switzerland_🇨🇭
-
-vless://83989465-4ec6-4dbe-97c6-2779df88d9e0@83.228.235.106:443?type=tcp&security=reality&sni=varzesh3.com&fp=chrome&pbk=MK3NN842R-fVl71Rdcn9oLAQNJrd-igvxPaKS_c6928&sid=accd8c#🇨🇭-0001
-#🇨🇭-0001
 
 ###########_UNSTABLE_############
 
