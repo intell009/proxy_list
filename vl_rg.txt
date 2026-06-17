@@ -11,6 +11,8 @@ vless://ded3638e-ab7f-4ff8-bc60-9fc6666cff22@186.246.13.22:443?fp=firefox&mode=g
 
 vless://ded3638e-ab7f-4ff8-bc60-9fc6666cff22@201.51.6.180:443?fp=firefox&mode=gun&pbk=cfP-aGpMV6o0n3Iwee_K8viWBvvr_qbOUTE-KkFnplg&security=reality&serviceName=gun&sid=75e9c999cf797b8a&sni=nixos.ubuntuhosting.host&type=grpc#🇩🇪-0001
 #🇩🇪-0001
+vless://92f06d05-fca8-445a-aaee-7ecced6ac2fd@information.lunetpn.ru:4433?mode=gun&security=reality&encryption=none&authority=&pbk=L_N9qaFE0gwG5PwS4Pag8e6uwrsLxSlksX7CVvgQ5hA&fp=chrome&allowinsecure=0&type=grpc&serviceName=grpc2&sni=ya.ru&sid=9c6f7a1b#🇩🇪-0002
+#🇩🇪-0002
 
 ###_Lithuania_🇱🇹
 
