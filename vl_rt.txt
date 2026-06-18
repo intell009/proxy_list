@@ -4,7 +4,7 @@
 
 ###_Poland_🇵🇱
 
-vless://1b9e301d-cecd-4eb1-8b36-eef811c2696d@155.212.182.19:443?encryption=none&type=tcp&security=reality&fp=chrome&sni=wildberries.ru&pbk=A7g4cVaB6_5cmIrGbv-PmkVpS4pvHWp2HfLZbjv-SDQ&sid=5e841fab#🇵🇱-0001
+vless://1b9e301d-cecd-4eb1-8b36-eef811c2696d@155.212.182.19:443?fp=firefox&nonce=iLaZ8xoJ&pbk=A7g4cVaB6_5cmIrGbv-PmkVpS4pvHWp2HfLZbjv-SDQ&security=reality&sid=5e841fab&sni=wildberries.ru&type=tcp#🇵🇱-0001
 #🇵🇱-0001
 
 ###########_UNSTABLE_############
