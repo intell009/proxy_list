@@ -1,5 +1,14 @@
 ﻿###########_ALIVE_############
 
+########_EU
+
+###_Germany_🇩🇪
+
+vless://b0f08ae1-7cf9-4612-ad61-72681e0b92da@de-3.coinbridge.nl:443?mode=gun&security=reality&encryption=none&pbk=kPBXTe2KCp55GrHS_qU_sF7ohUcT8Vu-e8i6Yd9MERI&fp=random&type=grpc&serviceName=data-sync&sni=google.com&sid=d5c7f84e37e0c12d#🇩🇪-0001
+#🇩🇪-0001
+vless://5e58c2f5-b27d-4130-bd8f-dd05ee0f4825@ge1.clear-vpn.org:443?mode=gun&security=reality&encryption=none&pbk=AXjwyGxRT-mcOzOSNYYywOWoxZ9tEvfCTo3LZDxS5Dw&fp=chrome&spx=/&type=grpc&serviceName=GrpcFuckRKN2&sni=www.microsoft.com&sid=c0ffee12#🇩🇪-0002
+#🇩🇪-0002
+
 ###########_UNSTABLE_############
 
 ###########_DEAD_############
