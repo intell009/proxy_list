@@ -2,12 +2,21 @@
 
 ########_EU
 
-###_Germany_🇩🇪
+###_Finland_🇫🇮
 
-vless://b0f08ae1-7cf9-4612-ad61-72681e0b92da@de-3.coinbridge.nl:443?mode=gun&security=reality&encryption=none&pbk=kPBXTe2KCp55GrHS_qU_sF7ohUcT8Vu-e8i6Yd9MERI&fp=random&type=grpc&serviceName=data-sync&sni=google.com&sid=d5c7f84e37e0c12d#🇩🇪-0001
-#🇩🇪-0001
-vless://5e58c2f5-b27d-4130-bd8f-dd05ee0f4825@ge1.clear-vpn.org:443?mode=gun&security=reality&encryption=none&pbk=AXjwyGxRT-mcOzOSNYYywOWoxZ9tEvfCTo3LZDxS5Dw&fp=chrome&spx=/&type=grpc&serviceName=GrpcFuckRKN2&sni=www.microsoft.com&sid=c0ffee12#🇩🇪-0002
-#🇩🇪-0002
+vless://38ec7713-bbdd-459b-9cc3-f28b7cc4ff52@81.163.23.115:2097?encryption=none&type=grpc&security=reality&mode=gun&serviceName=grpc&fp=firefox&sni=gazeta-business.ru&pbk=DaIRouGSxxQDEv9WKRxD79b2Vt0fsw4yQOTeAmXUYCM&sid=c05d4c564d2bcd#🇫🇮-0001
+#🇫🇮-0001
+vless://38ec7713-bbdd-459b-9cc3-f28b7cc4ff52@81.94.148.75:8443?encryption=none&type=grpc&security=reality&mode=gun&serviceName=ads.x5.ru&fp=chrome&sni=ads.x5.ru&pbk=DaIRouGSxxQDEv9WKRxD79b2Vt0fsw4yQOTeAmXUYCM&sid=825867#🇫🇮-0002
+#🇫🇮-0002
+
+###_Netherlands_🇳🇱
+
+vless://ada18e5c-5e60-11f1-bd95-ee5f4ed81fa1@5.42.99.168:2053?encryption=none&type=grpc&security=reality&mode=gun&serviceName=grpc-direct&fp=chrome&sni=api.gruztrack.online&pbk=75W-x6PKwwG6fJJbrIkGcsBgMKP7pQnw2HlM8oevDjM&sid=e35c7f14cc807f4d#🇳🇱-0001
+#🇳🇱-0001
+vless://906a8afb-0508-000b-8926-7a754dd62db5@nl02.goodmaximum.com:443?mode=gun&security=reality&encryption=none&pbk=fPSR5GZpxhOV6Rh7VzMtS4AeRN7ipyNX4waG9JzJzxQ&fp=chrome&type=grpc&serviceName=QToNrKDvQT5AfnFM&sni=cloud.nimhogoa.com&sid=21181028b56c8702#🇳🇱-0002
+#🇳🇱-0002
+vless://82d47c52-9738-4d40-93a4-220bab575c60@treng.loralden.com:443?mode=gun&security=reality&encryption=none&authority=treng.loralden.com&pbk=EUK_ePvEKUGcezQYHqgJ5P462XxLPXPm9CZWGLaL33k&fp=chrome&spx=/&type=grpc&serviceName=grpc&sni=treng.loralden.com&sid=ed72a429f0135a3f#🇳🇱-0003
+#🇳🇱-0003
 
 ###########_UNSTABLE_############
 
