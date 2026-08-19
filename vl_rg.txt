@@ -1,35 +1,58 @@
 ﻿###########_ALIVE_############
 
+########_CIS
+
+###_Russia_🇷🇺
+
+vless://2c634977-584e-4e1f-b501-1b70c77a6743@185.141.227.153:9001?encryption=none&fp=ios&mode=gun&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&serviceName=grpc-reality&sid=6ba85179e30d4fc2&sni=api-maps.yandex.ru&type=grpc#🇷🇺-0001
+#🇷🇺-0001
+vless://41da9cd0-b02c-427a-b74e-7e402c610ae4@193.233.246.82:8443?type=grpc&security=reality&fp=chrome&pbk=sgFFdQvfeujBKh6g7N7klU_u0mKYlr800MFbko5FzUg&sid=844352756c1fabba&sni=ads.x5.ru&mode=gun&serviceName=grpc-yandex#🇷🇺-0002
+#🇷🇺-0002
+vless://ba222add-6ac1-45f1-9a18-f91cb38e324f@201.51.1.84:16923?encryption=none&fp=firefox&mode=gun&pbk=_QeslG3rHGM7DoM99pYC8-jpc16pM2MbNZ6NRMoxmHA&security=reality&serviceName=neurex&sid=10ffb85da1c2d986&sni=api-maps.yandex.ru&type=grpc#🇷🇺-0003
+#🇷🇺-0003
+
 ########_EU
 
-###_Germany_🇩🇪
+###_Austria_🇦🇹
 
-vless://218fd696-e3a2-4c33-b397-a5f13a82969e@46.8.221.218:443?encryption=none&fp=edge&mode=gun&pbk=vxhkDXfYpz1OLqZ-_9QVoQr3_UJLtJFheb5bD5YH7z8&security=reality&serviceName=grpc&sid=3303c7a5&sni=media2.tcpdoor.net&type=grpc#🇩🇪-0001
-#🇩🇪-0001
+vless://427c1d7e-d485-44eb-a971-e3c35007b71e@5.188.115.185:8446?encryption=none&fp=firefox&mode=gun&pbk=7IOtSp0-n2_uNS5nMO9ywZbn2HibMRGy0KbLad3szXc&security=reality&serviceName=grpc&sid=a1b2c3d4&sni=eh.vk.com&type=grpc#🇦🇹-0001
+#🇦🇹-0001
+vless://b8aa8ce1-e5fe-43f6-ad47-c5e4ebaff812@5.188.115.185:8446?encryption=none&fp=firefox&mode=gun&pbk=7IOtSp0-n2_uNS5nMO9ywZbn2HibMRGy0KbLad3szXc&security=reality&serviceName=grpc&sid=5e6f7a8b&sni=eh.vk.com&type=grpc#🇦🇹-0002
+#🇦🇹-0002
+
+###_Finland_🇫🇮
+
+vless://d01d5a74-09fb-4e9e-b0d9-38b5fd77ad70@157.180.119.87:2087?security=reality&type=grpc&mode=gun&serviceName=grpc&sni=www.bing.com&fp=chrome&sid=72ce50a0&pbk=92SyLtOmKXvLc6wSMew9sRpmRfVY_BwywV8Mf5r-p2s&encryption=none#🇫🇮-0001
+#🇫🇮-0001
+vless://8975546a-375c-4966-8064-19fc0f66f30a@31.76.80.69:2053?type=grpc&security=reality&fp=firefox&pbk=zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk&sid=01aa&sni=www.amd.com&mode=gun&serviceName=grpc&spx=/wn2peayzr5668g3#🇫🇮-0002
+#🇫🇮-0002
+
+###_France_🇫🇷
+
+vless://2c634977-584e-4e1f-b501-1b70c77a6743@185.141.227.150:9002?encryption=none&fp=firefox&mode=gun&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&serviceName=grpc-reality&sni=api-maps.yandex.ru&type=grpc#🇫🇷-0001
+#🇫🇷-0001
+vless://2c634977-584e-4e1f-b501-1b70c77a6743@185.141.227.153:9002?encryption=none&fp=firefox&mode=gun&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&serviceName=grpc-reality&sid=6ba85179e30d4fc2&sni=api-maps.yandex.ru&type=grpc#🇫🇷-0002
+#🇫🇷-0002
+vless://2c634977-584e-4e1f-b501-1b70c77a6743@78.159.245.75:9002?encryption=none&fp=safari&mode=gun&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&serviceName=grpc-reality&sni=api-maps.yandex.ru&type=grpc#🇫🇷-0003
+#🇫🇷-0003
 
 ###_Netherlands_🇳🇱
 
-vless://2c634977-584e-4e1f-b501-1b70c77a6743@185.141.227.153:9001?mode=gun&security=reality&encryption=none&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&fp=safari&type=grpc&serviceName=grpc-reality&sni=api-maps.yandex.ru&sid=6ba85179e30d4fc2#🇳🇱-0001
+vless://fe0138b5-ca60-4a67-91aa-b5a49266eeb5@212.233.99.132:6444?encryption=none&fp=edge&mode=gun&pbk=D_6yJhDg-rnm_4y3onQwlfpTjCfoJvSeihN7D4pHnCA&security=reality&serviceName=NekoService&sid=7e4aa03904fefb&sni=www.sony.com&type=grpc#🇳🇱-0001
 #🇳🇱-0001
-vless://2c634977-584e-4e1f-b501-1b70c77a6743@185.141.227.153:9002?encryption=none&fp=safari&mode=gun&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&serviceName=grpc-reality&sid=6ba85179e30d4fc2&sni=api-maps.yandex.ru&type=grpc#🇳🇱-0002
+vless://23da643f-f43c-4c83-af3f-4193eacd878d@87.228.101.34:443?encryption=none&fp=qq&mode=gun&pbk=DmpMjyYBIU4KdMNY-0M8TxX5OBrQQ1A5E28Y9_-VQDk&security=reality&serviceName=mtdklsqa&sid=aaaa&sni=metrics.selectel.ru&type=grpc#🇳🇱-0002
 #🇳🇱-0002
+vless://23da643f-f43c-4c83-af3f-4193eacd878d@87.228.101.34:443?encryption=none&fp=firefox&mode=gun&pbk=3ZHq23cnEeKllJQYQ_S5TsAv-4grmPFAOY31z3QKOBU&security=reality&serviceName=zrvxqfpn&sid=aaaa&sni=api.selectel.ru&type=grpc#🇳🇱-0003
+#🇳🇱-0003
 
 ###_Poland_🇵🇱
 
-vless://fd94a343-cb11-45e6-9882-72352d0a2b8f@185.50.203.1:9892?encryption=none&fp=chrome&mode=gun&pbk=bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU&security=reality&serviceName=grpc-tunnel&sni=dl.google.com&type=grpc#🇵🇱-0001
+vless://2a650f3b-d95b-4bd6-aadf-16ccc0717155@176.109.108.196:9892?encryption=none&fp=ios&mode=gun&pbk=bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU&security=reality&serviceName=grpc-tunnel&sni=dl.google.com&type=grpc#🇵🇱-0001
 #🇵🇱-0001
-vless://d23cb516-40db-4aa4-8142-6b45ff882f90@pl4.lckdwn.ru:33843?type=grpc&serviceName=grpc&mode=gun&security=reality&sni=www.cloudflare.com&pbk=6GqM3zujFqyHA2Ksah-jgKWzxZToKS-PZOHqLIWNJhs&sid=b9a14981&fp=chrome&spx=%2Fhqrcwtxf9mhwjkc#🇵🇱-0002
+vless://fd94a343-cb11-45e6-9882-72352d0a2b8f@176.109.108.196:9892?encryption=none&fp=firefox&mode=gun&pbk=bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU&security=reality&serviceName=grpc-tunnel&sid=aabb&sni=dl.google.com&type=grpc#🇵🇱-0002
 #🇵🇱-0002
-
-###_Sweden_🇸🇪
-
-vless://fd94a343-cb11-45e6-9882-72352d0a2b8f@176.123.164.9:9872?encryption=none&fp=ios&mode=gun&pbk=bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU&security=reality&serviceName=grpc-tunnel&sid=aabbccdd&sni=dl.google.com&type=grpc#🇸🇪-0001
-#🇸🇪-0001
-
-###_Switzerland_🇨🇭
-
-vless://fd94a343-cb11-45e6-9882-72352d0a2b8f@194.67.103.173:9882?encryption=none&fp=qq&mode=gun&pbk=bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU&security=reality&serviceName=grpc-tunnel&sid=aa&sni=dl.google.com&type=grpc#🇨🇭-0001
-#🇨🇭-0001
+vless://d23cb516-40db-4aa4-8142-6b45ff882f90@pl4.lckdwn.ru:33843?type=grpc&serviceName=grpc&mode=gun&security=reality&sni=www.cloudflare.com&pbk=6GqM3zujFqyHA2Ksah-jgKWzxZToKS-PZOHqLIWNJhs&sid=b9a14981&fp=chrome&spx=%2Fhqrcwtxf9mhwjkc#🇵🇱-0003
+#🇵🇱-0003
 
 ###########_UNSTABLE_############
 
