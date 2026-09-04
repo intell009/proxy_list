@@ -14,9 +14,9 @@ vless://c6037cf7-d931-4027-af06-6bfb0f10684c@88.216.190.206:443?type=tcp&securit
 #🇩🇪-0004
 vless://c6037cf7-d931-4027-af06-6bfb0f10684c@sv9.jarvesitw.ru:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=apiv91.jarvesitw.ru&fp=firefox&pbk=QMkh_UZF6wTVrYukjoZTbrRUziZxT-s0Oj8zVP_RuH0&sid=b0ffeec3&packetEncoding=xudp#🇩🇪-0005
 #🇩🇪-0005
-vless://d7430ae7-320c-4658-808b-3006d0627d82@176.108.250.55:443?encryption=none&type=grpc&security=reality&sni=nixos.ubuntuhosting.host&pbk=cfP-aGpMV6o0n3Iwee_K8viWBvvr_qbOUTE-KkFnplg&sid=0c641149a3f0c5&fp=edge&serviceName=gun#%#🇩🇪-0006
-vless://d7430ae7-320c-4658-808b-3006d0627d82@mageia.ubuntuhosting.host:443?encryption=none&type=grpc&security=reality&sni=mageia.ubuntuhosting.host&pbk=QJW15WZWLNjA8KEpe4GqSdOe4rfW8KgqjjVmKxPk-ng&sid=3fa234ea9feaa048&fp=chrome&serviceName=gun##🇩🇪-0007
-vless://d7430ae7-320c-4658-808b-3006d0627d82@opensuse.ubuntuhosting.host:443?encryption=none&type=grpc&security=reality&sni=opensuse.ubuntuhosting.host&pbk=QJW15WZWLNjA8KEpe4GqSdOe4rfW8KgqjjVmKxPk-ng&sid=3fa234ea9feaa048&fp=chrome&serviceName=gun##🇩🇪-0008
+vless://d7430ae7-320c-4658-808b-3006d0627d82@176.108.250.55:443?encryption=none&type=grpc&security=reality&sni=nixos.ubuntuhosting.host&pbk=cfP-aGpMV6o0n3Iwee_K8viWBvvr_qbOUTE-KkFnplg&sid=0c641149a3f0c5&fp=edge&serviceName=gun#%🇩🇪-0006
+vless://d7430ae7-320c-4658-808b-3006d0627d82@mageia.ubuntuhosting.host:443?encryption=none&type=grpc&security=reality&sni=mageia.ubuntuhosting.host&pbk=QJW15WZWLNjA8KEpe4GqSdOe4rfW8KgqjjVmKxPk-ng&sid=3fa234ea9feaa048&fp=chrome&serviceName=gun#🇩🇪-0007
+vless://d7430ae7-320c-4658-808b-3006d0627d82@opensuse.ubuntuhosting.host:443?encryption=none&type=grpc&security=reality&sni=opensuse.ubuntuhosting.host&pbk=QJW15WZWLNjA8KEpe4GqSdOe4rfW8KgqjjVmKxPk-ng&sid=3fa234ea9feaa048&fp=chrome&serviceName=gun#🇩🇪-0008
 
 ###_Lithuania_🇱🇹
 
