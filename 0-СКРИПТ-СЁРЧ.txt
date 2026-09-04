@@ -1,0 +1,759 @@
+﻿==================== GITHUB SEC‑SEARCH CHECKLIST ====================
+
+[1] ДИРЕКТОРИИ, ГДЕ ЧАЩЕ ВСЕГО ЛЕЖАТ РЕАЛЬНЫЕ КОНФИГИ
+backup/
+old/
+mobile/
+dotfiles/
+.config/
+sing-box/
+shadowrocket/
+private/
+test/
+
+[2] КОММИТЫ, ГДЕ ЧАСТО ВСПЛЫВАЮТ УТЕЧКИ
+"initial commit"
+"backup"
+"old config"
+"update config"
+"mobile"
+"test"
+"fix"
+
+[3] ТИПЫ ФАЙЛОВ, ГДЕ БЫВАЮТ КЛЮЧИ
+*.json
+*.toml
+*.yaml
+*.yml
+*.txt
+*.conf
+*.ini
+
+[4] ПОИСКОВЫЕ ЗАПРОСЫ (TUIC)
+"tuic" "uuid" in:file
+"tuic" "password" in:file
+"tuic" "token" in:file
+"congestion_control" "tuic" in:file
+"udp_relay_mode" "tuic" in:file
+"tuic://" "@" in:file
+
+[5] ПОИСКОВЫЕ ЗАПРОСЫ (HYSTERIA2)
+"hysteria2" "auth" in:file
+"hysteria2://" in:file
+"alpn" "h3" "hysteria" in:file
+"pinSHA256" in:file
+
+[6] ПОИСКОВЫЕ ЗАПРОСЫ (VLESS REALITY)
+"reality" "pbk" in:file
+"flow=xtls-rprx-vision" in:file
+"vless://" "addons.mozilla.org" in:file
+
+[7] ОБЩИЕ МАРКЕРЫ ПРИВАТНЫХ КОНФИГОВ
+"server" ":" in:file
+"port" ":" in:file
+"uuid" ":" in:file
+"password" ":" in:file
+"private" in:path
+"backup" in:path
+"old" in:path
+
+[8] ИСКЛЮЧЕНИЕ МУСОРА
+-NOT "free"
+-NOT "proxy"
+-NOT "sub"
+-NOT "update"
+
+[9] ПРИЗНАКИ ЧАСТНОГО КОНФИГА
+1) UUID уникальный, не “красивый”
+2) password = укороченный UUID или случайный набор
+3) порты нестандартные (8881/8882/8883/10443/2053)
+4) есть pbk / pinSHA256 / reality params
+5) нет хвостов (#🇺🇸01, @channel)
+6) один IP → несколько протоколов (VLESS+Hysteria2+TUIC)
+7) параметры не шаблонные
+8) файл лежит в backup/old/mobile/dotfiles
+
+[10] МИНИ‑АЛГОРИТМ ПОИСКА
+1. GitHub → Code Search
+2. Вставить TUIC/Hysteria/VLESS маркеры
+3. Фильтр path:backup, path:old, path:mobile
+4. Открыть коммиты → искать uuid/password/token
+5. Проверить порты и параметры
+6. Если один UUID на несколько протоколов → частник
+=====================================================================
+=====================================================================
+=====================================================================
+https://github.com/fscarmen/sing-box/issues/302
+https://github.com/fscarmen/sing-box/issues/303
+
+=====================================================================
+
+root@quick-evidence:~# bash <(wget -qO- https://raw.githubusercontent.com/fscarmen/sing-box/main/sing-box.sh) 
+
+ Language:
+ 1. English (default) 
+ 2. 简体中文 
+
+ Choose: 2
+
+ 所有依赖已存在，不需要额外安装 
+======================================================================================================================
+
+ 脚本版本: v1.3.10 (2026.04.25)
+ 功能新增: 增加 native 协议，支持该协议的客户端极少，Shadowrocket 支持最好。sing-box 内核需要按说明使用-glibc 或者 -musl 版本，详见官方说明 https://sing-box.sagernet.org/zh/configuration/outbound/naive/
+ 系统信息:
+         当前操作系统: Ubuntu 24.04.4 LTS
+         内核: 6.8.0-106-generic
+         处理器架构: amd64
+         虚拟化: kvm 
+         IPv4: 89.144.47.144  德国  AS213495 SERVITRO LTD 
+         IPv6:      
+         Sing-box: 未安装                            
+         Argo:     未安装                            
+         Nginx:    未安装                            
+
+======================================================================================================================
+
+ 1.  极速安装模式 (所有协议 + 订阅) (sb -l) 
+ 2.  安装 Sing-box + Argo + 订阅 ( 额外依赖: nginx ) 
+ 3.  安装 Sing-box + Argo ( 额外依赖: nginx ) 
+ 4.  安装 Sing-box + 订阅 ( 额外依赖: nginx ) 
+ 5.  安装 Sing-box 
+ 6.  升级内核、安装BBR、DD脚本 (sb -b) 
+ 7.  安装 ArgoX 脚本 (argo + xray) [https://github.com/fscarmen/argox] 
+ 8.  安装 sba 脚本 (argo + sing-box) [https://github.com/fscarmen/sba] 
+ 9.  安装 TCP brutal 
+ 0.  退出 
+
+ 请选择: 1
+
+ 安装依赖列表: nginx 
+
+
+ 下载 Sing-box 中，请稍等 ... 
+
+ Sing-box 开启 成功 
+
+
+ Argo 开启 成功 
+
+*******************************************
+┌────────────────┐
+│                │
+│     V2rayN     │
+│                │
+└────────────────┘
+
+
+{
+    "log": {
+        "level": "warn"
+    },
+    "inbounds": [
+        {
+            "listen": "127.0.0.1",
+            "listen_port": 8884,
+            "tag": "ShadowTLS",
+            "type": "mixed"
+        }
+    ],
+    "outbounds": [
+        {
+            "detour": "shadowtls-out",
+            "method": "2022-blake3-aes-128-gcm",
+            "password": "mnTUWW0waduEtt9MuIbYnA==",
+            "type": "shadowsocks",
+            "udp_over_tcp": false,
+            "multiplex": {
+              "enabled": true,
+              "protocol": "h2mux",
+              "max_connections": 8,
+              "min_streams": 16,
+              "padding": true
+            }
+        },
+        {
+            "password": "e431d4d7-b404-45c0-bc96-96f34f13b260",
+            "server": "89.144.47.144",
+            "server_port": 8884,
+            "tag": "shadowtls-out",
+            "tls": {
+                "enabled": true,
+                "server_name": "addons.mozilla.org",
+                "utls": {
+                  "enabled": true,
+                  "fingerprint": "firefox"
+                }
+            },
+            "type": "shadowtls",
+            "version": 3
+        }
+    ]
+}
+----------------------------
+vless://e431d4d7-b404-45c0-bc96-96f34f13b260@89.144.47.144:8881?encryption=none&flow=xtls-rprx-vision&security=reality&sni=addons.mozilla.org&fp=firefox&pbk=8iKjMSHxotwx5tQNPw9pRP8luJaLSZ2AyViTGasIBTw&type=tcp&headerType=none#🇩🇪%20quick-evidence%20xtls-reality
+hysteria2://e431d4d7-b404-45c0-bc96-96f34f13b260@89.144.47.144:8882?sni=addons.mozilla.org&alpn=h3&insecure=1&allowInsecure=1&pinSHA256=691FBF6E86F6BFFB27B0D0A0038F088075C65D2CDA5D8DBCAE716857E8064DEC&mport=50000-51000#🇩🇪%20quick-evidence%20hysteria2
+tuic://e431d4d7-b404-45c0-bc96-96f34f13b260:e431d4d7-b404-45c0-bc96-96f34f13b260@89.144.47.144:8883?sni=addons.mozilla.org&alpn=h3&insecure=1&allowInsecure=1&congestion_control=bbr#🇩🇪%20quick-evidence%20tuic
+ss://MjAyMi1ibGFrZTMtYWVzLTEyOC1nY206bW5UVVdXMHdhZHVFdHQ5TXVJYlluQT09QDg5LjE0NC40Ny4xNDQ6ODg4NQ==#🇩🇪%20quick-evidence%20shadowsocks
+trojan://e431d4d7-b404-45c0-bc96-96f34f13b260@89.144.47.144:8886?security=tls&insecure=1&allowInsecure=1&pcs=691FBF6E86F6BFFB27B0D0A0038F088075C65D2CDA5D8DBCAE716857E8064DEC&type=tcp&headerType=none#🇩🇪%20quick-evidence%20trojan
+vmess://eyAidiI6ICIyIiwgInBzIjogIvCfh6nwn4eqIHF1aWNrLWV2aWRlbmNlIHZtZXNzLXdzIiwgImFkZCI6ICJza2subW9lIiwgInBvcnQiOiAiODAiLCAiaWQiOiAiZTQzMWQ0ZDctYjQwNC00NWMwLWJjOTYtOTZmMzRmMTNiMjYwIiwgImFpZCI6ICIwIiwgInNjeSI6ICJub25lIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogImF1dG8iLCAiaG9zdCI6ICJjaGFuZ2VkLW1vdGl2YXRlZC10cmlwcy11bml0ZWQudHJ5Y2xvdWRmbGFyZS5jb20iLCAicGF0aCI6ICIvZTQzMWQ0ZDctYjQwNC00NWMwLWJjOTYtOTZmMzRmMTNiMjYwLXZtZXNzIiwgInRscyI6ICIiLCAic25pIjogIiIsICJhbHBuIjogIiIgfQ==
+vless://e431d4d7-b404-45c0-bc96-96f34f13b260@skk.moe:443?encryption=none&security=tls&sni=changed-motivated-trips-united.trycloudflare.com&type=ws&host=changed-motivated-trips-united.trycloudflare.com&path=%2Fe431d4d7-b404-45c0-bc96-96f34f13b260-vless%3Fed%3D2560#🇩🇪%20quick-evidence%20vless-ws-tls
+vless://e431d4d7-b404-45c0-bc96-96f34f13b260@89.144.47.144:8889?encryption=none&security=reality&sni=addons.mozilla.org&fp=firefox&pbk=8iKjMSHxotwx5tQNPw9pRP8luJaLSZ2AyViTGasIBTw&type=http#🇩🇪%20quick-evidence%20h2-reality
+vless://e431d4d7-b404-45c0-bc96-96f34f13b260@89.144.47.144:8890?encryption=none&security=reality&sni=addons.mozilla.org&fp=firefox&pbk=8iKjMSHxotwx5tQNPw9pRP8luJaLSZ2AyViTGasIBTw&type=grpc&serviceName=grpc&mode=gun#🇩🇪%20quick-evidence%20grpc-reality
+vless://YXV0bzplNDMxZDRkNy1iNDA0LTQ1YzAtYmM5Ni05NmYzNGYxM2IyNjBAODkuMTQ0LjQ3LjE0NDo4ODgx?remarks=🇩🇪%20quick-evidence%20xtls-reality&tls=1&peer=addons.mozilla.org&xtls=2&pbk=8iKjMSHxotwx5tQNPw9pRP8luJaLSZ2AyViTGasIBTw
+hysteria2://e431d4d7-b404-45c0-bc96-96f34f13b260@89.144.47.144:8882?peer=addons.mozilla.org&hpkp=69:1F:BF:6E:86:F6:BF:FB:27:B0:D0:A0:03:8F:08:80:75:C6:5D:2C:DA:5D:8D:BC:AE:71:68:57:E8:06:4D:EC&obfs=none&upmbps=200&downmbps=1000&keepalive=30&mport=8882,50000-51000#🇩🇪%20quick-evidence%20hysteria2
+tuic://e431d4d7-b404-45c0-bc96-96f34f13b260:e431d4d7-b404-45c0-bc96-96f34f13b260@89.144.47.144:8883?peer=addons.mozilla.org&congestion_control=bbr&udp_relay_mode=native&alpn=h3&hpkp=69:1F:BF:6E:86:F6:BF:FB:27:B0:D0:A0:03:8F:08:80:75:C6:5D:2C:DA:5D:8D:BC:AE:71:68:57:E8:06:4D:EC#🇩🇪%20quick-evidence%20tuic
+ss://MjAyMi1ibGFrZTMtYWVzLTEyOC1nY206bW5UVVdXMHdhZHVFdHQ5TXVJYlluQT09QDg5LjE0NC40Ny4xNDQ6ODg4NA==?shadow-tls=eyJ2ZXJzaW9uIjoiMyIsImhvc3QiOiJhZGRvbnMubW96aWxsYS5vcmciLCJwYXNzd29yZCI6ImU0MzFkNGQ3LWI0MDQtNDVjMC1iYzk2LTk2ZjM0ZjEzYjI2MCJ9#🇩🇪%20quick-evidence%20ShadowTLS
+ss://MjAyMi1ibGFrZTMtYWVzLTEyOC1nY206bW5UVVdXMHdhZHVFdHQ5TXVJYlluQT09QDg5LjE0NC40Ny4xNDQ6ODg4NQ==#🇩🇪%20quick-evidence%20shadowsocks
+trojan://e431d4d7-b404-45c0-bc96-96f34f13b260@89.144.47.144:8886?peer=addons.mozilla.org&hpkp=69:1F:BF:6E:86:F6:BF:FB:27:B0:D0:A0:03:8F:08:80:75:C6:5D:2C:DA:5D:8D:BC:AE:71:68:57:E8:06:4D:EC#🇩🇪%20quick-evidence%20trojan
+vmess://YXV0bzplNDMxZDRkNy1iNDA0LTQ1YzAtYmM5Ni05NmYzNGYxM2IyNjBAc2trLm1vZTo4MA==?remarks=🇩🇪%20quick-evidence%20vmess-ws&obfsParam=changed-motivated-trips-united.trycloudflare.com&path=/e431d4d7-b404-45c0-bc96-96f34f13b260-vmess&obfs=websocket&alterId=0
+vless://YXV0bzplNDMxZDRkNy1iNDA0LTQ1YzAtYmM5Ni05NmYzNGYxM2IyNjBAc2trLm1vZTo0NDM=?remarks=🇩🇪%20quick-evidence%20vless-ws-tls&obfsParam=changed-motivated-trips-united.trycloudflare.com&path=/e431d4d7-b404-45c0-bc96-96f34f13b260-vless?ed=2560&obfs=websocket&tls=1&peer=changed-motivated-trips-united.trycloudflare.co
+vless://YXV0bzplNDMxZDRkNy1iNDA0LTQ1YzAtYmM5Ni05NmYzNGYxM2IyNjBAODkuMTQ0LjQ3LjE0NDo4ODg5?remarks=🇩🇪%20quick-evidence%20h2-reality&path=/&obfs=h2&tls=1&peer=addons.mozilla.org&alpn=h2&mux=1&pbk=8iKjMSHxotwx5tQNPw9pRP8luJaLSZ2AyViTGasIBTw
+vless://YXV0bzplNDMxZDRkNy1iNDA0LTQ1YzAtYmM5Ni05NmYzNGYxM2IyNjBAODkuMTQ0LjQ3LjE0NDo4ODkw?remarks=🇩🇪%20quick-evidence%20grpc-reality&path=grpc&obfs=grpc&tls=1&peer=addons.mozilla.org&pbk=8iKjMSHxotwx5tQNPw9pRP8luJaLSZ2AyViTGasIBTw
+vless://e431d4d7-b404-45c0-bc96-96f34f13b260@89.144.47.144:8881?security=reality&sni=addons.mozilla.org&fp=firefox&pbk=8iKjMSHxotwx5tQNPw9pRP8luJaLSZ2AyViTGasIBTw&type=tcp&flow=xtls-rprx-vision&encryption=none#🇩🇪%20quick-evidence%20xtls-reality
+hy2://e431d4d7-b404-45c0-bc96-96f34f13b260@89.144.47.144:8882?insecure=1&security=tls&sni=addons.mozilla.org&upmbps=200&downmbps=1000&security=tls&tls_certificate=-----BEGIN CERTIFICATE-----,MIIBcDCCARagAwIBAgIUF2itIcDrQUkTox1VCmb/SLVReCkwCgYIKoZIzj0EAwIw,FjEUMBIGA1UEAwwLbW96aWxsYS5vcmcwIBcNMjYwNTA0MDI1MjMxWhgPMjEyNjA0,MTAwMjUyMzFaMBYxFDASBgNVBAMMC21vemlsbGEub3JnMFkwEwYHKoZIzj0CAQYI,KoZIzj0DAQcDQgAEok+16qXhoL/XvCKMW0KrVr3xIK7MHCHVjzG4kskWb5cVzbRF,EasFHCZMkPsW7gPdP3Djz+JQpzFlW3MVHH8W6qNAMD4wHQYDVR0RBBYwFIISYWRk,b25zLm1vemlsbGEub3JnMB0GA1UdDgQWBBQil7M6rA/Ws2bwdpoAshXUJYpKzDAK,BggqhkjOPQQDAgNIADBFAiEAsICqzDjPU5czqhXtR8jNGp6v6fXhTVUFknFlb9xy,8bYCID4eJFwWj390AMibMbVdnp0AZYGOlzS5GTSeaGMVIsCS,-----END CERTIFICATE-----&mport=50000-51000&hop_interval=30#🇩🇪%20quick-evidence%20hysteria2
+tuic://e431d4d7-b404-45c0-bc96-96f34f13b260:e431d4d7-b404-45c0-bc96-96f34f13b260@89.144.47.144:8883?congestion_control=bbr&alpn=h3&sni=addons.mozilla.org&udp_relay_mode=native&allow_insecure=1&security=tls&tls_certificate=-----BEGIN CERTIFICATE-----,MIIBcDCCARagAwIBAgIUF2itIcDrQUkTox1VCmb/SLVReCkwCgYIKoZIzj0EAwIw,FjEUMBIGA1UEAwwLbW96aWxsYS5vcmcwIBcNMjYwNTA0MDI1MjMxWhgPMjEyNjA0,MTAwMjUyMzFaMBYxFDASBgNVBAMMC21vemlsbGEub3JnMFkwEwYHKoZIzj0CAQYI,KoZIzj0DAQcDQgAEok+16qXhoL/XvCKMW0KrVr3xIK7MHCHVjzG4kskWb5cVzbRF,EasFHCZMkPsW7gPdP3Djz+JQpzFlW3MVHH8W6qNAMD4wHQYDVR0RBBYwFIISYWRk,b25zLm1vemlsbGEub3JnMB0GA1UdDgQWBBQil7M6rA/Ws2bwdpoAshXUJYpKzDAK,BggqhkjOPQQDAgNIADBFAiEAsICqzDjPU5czqhXtR8jNGp6v6fXhTVUFknFlb9xy,8bYCID4eJFwWj390AMibMbVdnp0AZYGOlzS5GTSeaGMVIsCS,-----END CERTIFICATE-----#🇩🇪%20quick-evidence%20tuic
+ss://MjAyMi1ibGFrZTMtYWVzLTEyOC1nY206bW5UVVdXMHdhZHVFdHQ5TXVJYlluQT09@89.144.47.144:8885#🇩🇪%20quick-evidence%20shadowsocks
+trojan://e431d4d7-b404-45c0-bc96-96f34f13b260@89.144.47.144:8886?security=tls&sni=addons.mozilla.org&allowInsecure=1&tls_certificate=-----BEGIN CERTIFICATE-----,MIIBcDCCARagAwIBAgIUF2itIcDrQUkTox1VCmb/SLVReCkwCgYIKoZIzj0EAwIw,FjEUMBIGA1UEAwwLbW96aWxsYS5vcmcwIBcNMjYwNTA0MDI1MjMxWhgPMjEyNjA0,MTAwMjUyMzFaMBYxFDASBgNVBAMMC21vemlsbGEub3JnMFkwEwYHKoZIzj0CAQYI,KoZIzj0DAQcDQgAEok+16qXhoL/XvCKMW0KrVr3xIK7MHCHVjzG4kskWb5cVzbRF,EasFHCZMkPsW7gPdP3Djz+JQpzFlW3MVHH8W6qNAMD4wHQYDVR0RBBYwFIISYWRk,b25zLm1vemlsbGEub3JnMB0GA1UdDgQWBBQil7M6rA/Ws2bwdpoAshXUJYpKzDAK,BggqhkjOPQQDAgNIADBFAiEAsICqzDjPU5czqhXtR8jNGp6v6fXhTVUFknFlb9xy,8bYCID4eJFwWj390AMibMbVdnp0AZYGOlzS5GTSeaGMVIsCS,-----END CERTIFICATE-----&fp=firefox&type=tcp#🇩🇪%20quick-evidence%20trojan
+vmess://eyJhZGQiOiJza2subW9lIiwiYWlkIjoiMCIsImhvc3QiOiJjaGFuZ2VkLW1vdGl2YXRlZC10cmlwcy11bml0ZWQudHJ5Y2xvdWRmbGFyZS5jb20iLCJpZCI6ImU0MzFkNGQ3LWI0MDQtNDVjMC1iYzk2LTk2ZjM0ZjEzYjI2MCIsIm5ldCI6IndzIiwicGF0aCI6Ii9lNDMxZDRkNy1iNDA0LTQ1YzAtYmM5Ni05NmYzNGYxM2IyNjAtdm1lc3MiLCJwb3J0IjoiODAiLCJwcyI6IvCfh6nwn4eqIHF1aWNrLWV2aWRlbmNlIHZtZXNzLXdzIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiIiLCJ2IjoiMiJ9
+vless://e431d4d7-b404-45c0-bc96-96f34f13b260@skk.moe:443?security=tls&sni=changed-motivated-trips-united.trycloudflare.com&type=ws&path=/e431d4d7-b404-45c0-bc96-96f34f13b260-vless?ed%3D2560&host=changed-motivated-trips-united.trycloudflare.com&encryption=zero#🇩🇪%20quick-evidence%20vless-ws-tls
+vless://e431d4d7-b404-45c0-bc96-96f34f13b260@89.144.47.144:8889?security=reality&sni=addons.mozilla.org&alpn=h2&fp=firefox&pbk=8iKjMSHxotwx5tQNPw9pRP8luJaLSZ2AyViTGasIBTw&type=http&encryption=none#🇩🇪%20quick-evidence%20h2-reality
+vless://e431d4d7-b404-45c0-bc96-96f34f13b260@89.144.47.144:8890?security=reality&sni=addons.mozilla.org&fp=firefox&pbk=8iKjMSHxotwx5tQNPw9pRP8luJaLSZ2AyViTGasIBTw&type=grpc&serviceName=grpc&encryption=none#🇩🇪%20quick-evidence%20grpc-reality
+
+anytls://e431d4d7-b404-45c0-bc96-96f34f13b260@89.144.47.144:8891?idle_session_check_interval=30s&idle_session_timeout=30s&min_idle_session=5&insecure=1&security=tls&sni=addons.mozilla.org&tls_certificate=-----BEGIN CERTIFICATE-----,MIIBcDCCARagAwIBAgIUF2itIcDrQUkTox1VCmb/SLVReCkwCgYIKoZIzj0EAwIw,FjEUMBIGA1UEAwwLbW96aWxsYS5vcmcwIBcNMjYwNTA0MDI1MjMxWhgPMjEyNjA0,MTAwMjUyMzFaMBYxFDASBgNVBAMMC21vemlsbGEub3JnMFkwEwYHKoZIzj0CAQYI,KoZIzj0DAQcDQgAEok+16qXhoL/XvCKMW0KrVr3xIK7MHCHVjzG4kskWb5cVzbRF,EasFHCZMkPsW7gPdP3Djz+JQpzFlW3MVHH8W6qNAMD4wHQYDVR0RBBYwFIISYWRk,b25zLm1vemlsbGEub3JnMB0GA1UdDgQWBBQil7M6rA/Ws2bwdpoAshXUJYpKzDAK,BggqhkjOPQQDAgNIADBFAiEAsICqzDjPU5czqhXtR8jNGp6v6fXhTVUFknFlb9xy,8bYCID4eJFwWj390AMibMbVdnp0AZYGOlzS5GTSeaGMVIsCS,-----END CERTIFICATE-----&fp=firefox#🇩🇪%20quick-evidence%20anytls
+naive+https://e431d4d7-b404-45c0-bc96-96f34f13b260:e431d4d7-b404-45c0-bc96-96f34f13b260@89.144.47.144:8892?uot=1&security=tls&sni=addons.mozilla.org&tls_certificate=-----BEGIN CERTIFICATE-----,MIIBbzCCARSgAwIBAgIUKARTSod5UKCSHckzxohpqnre/G8wCgYIKoZIzj0EAwIw,FjEUMBIGA1UEAwwLbW96aWxsYS5vcmcwHhcNMjYwNTA0MDI1MjMxWhcNMjYxMTIw,MDI1MjMxWjAWMRQwEgYDVQQDDAttb3ppbGxhLm9yZzBZMBMGByqGSM49AgEGCCqG,SM49AwEHA0IABKJPteql4aC/17wijFtCq1a98SCuzBwh1Y8xuJLJFm+XFc20RRGr,BRwmTJD7Fu4D3T9w48/iUKcxZVtzFRx/FuqjQDA+MB0GA1UdEQQWMBSCEmFkZG9u,cy5tb3ppbGxhLm9yZzAdBgNVHQ4EFgQUIpezOqwP1rNm8HaaALIV1CWKSswwCgYI,KoZIzj0EAwIDSQAwRgIhAMvp2i9udD8xkWYUat03l+srzaEyQPhPSukg4esfDo3p,AiEA0o3B21t89lKUJC0FF/gu1FnS0yptefWTN4a+SPLkSmY=,-----END CERTIFICATE-----#🇩🇪%20quick-evidence%20naive%20http2
+naive+quic://e431d4d7-b404-45c0-bc96-96f34f13b260:e431d4d7-b404-45c0-bc96-96f34f13b260@89.144.47.144:8892?congestion_control=bbr&security=tls&sni=addons.mozilla.org&tls_certificate=-----BEGIN CERTIFICATE-----,MIIBbzCCARSgAwIBAgIUKARTSod5UKCSHckzxohpqnre/G8wCgYIKoZIzj0EAwIw,FjEUMBIGA1UEAwwLbW96aWxsYS5vcmcwHhcNMjYwNTA0MDI1MjMxWhcNMjYxMTIw,MDI1MjMxWjAWMRQwEgYDVQQDDAttb3ppbGxhLm9yZzBZMBMGByqGSM49AgEGCCqG,SM49AwEHA0IABKJPteql4aC/17wijFtCq1a98SCuzBwh1Y8xuJLJFm+XFc20RRGr,BRwmTJD7Fu4D3T9w48/iUKcxZVtzFRx/FuqjQDA+MB0GA1UdEQQWMBSCEmFkZG9u,cy5tb3ppbGxhLm9yZzAdBgNVHQ4EFgQUIpezOqwP1rNm8HaaALIV1CWKSswwCgYI,KoZIzj0EAwIDSQAwRgIhAMvp2i9udD8xkWYUat03l+srzaEyQPhPSukg4esfDo3p,AiEA0o3B21t89lKUJC0FF/gu1FnS0yptefWTN4a+SPLkSmY=,-----END CERTIFICATE-----#🇩🇪%20quick-evidence%20naive%20quic
+anytls://e431d4d7-b404-45c0-bc96-96f34f13b260@89.144.47.144:8891?peer=addons.mozilla.org&udp=1&hpkp=69:1F:BF:6E:86:F6:BF:FB:27:B0:D0:A0:03:8F:08:80:75:C6:5D:2C:DA:5D:8D:BC:AE:71:68:57:E8:06:4D:EC#🇩🇪%20quick-evidence%20anytls
+anytls://e431d4d7-b404-45c0-bc96-96f34f13b260@89.144.47.144:8891?security=tls&sni=addons.mozilla.org&fp=firefox&insecure=1&allowInsecure=1&type=tcp#🇩🇪%20quick-evidence%20anytls
+naive+https://e431d4d7-b404-45c0-bc96-96f34f13b260:e431d4d7-b404-45c0-bc96-96f34f13b260@89.144.47.144:8892?security=tls&sni=addons.mozilla.org&insecure=0&allowInsecure=0&type=tcp&headerType=none#🇩🇪%20quick-evidence%20naive%20http2
+naive+quic://e431d4d7-b404-45c0-bc96-96f34f13b260:e431d4d7-b404-45c0-bc96-96f34f13b260@89.144.47.144:8892?security=tls&sni=addons.mozilla.org&insecure=0&allowInsecure=0&type=tcp&headerType=none#🇩🇪%20quick-evidence%20naive%20quic
+nekoray://custom#eyJfdiI6MCwiYWRkciI6IjEyNy4wLjAuMSIsImNtZCI6WyIiXSwiY29yZSI6ImludGVybmFsIiwiY3MiOiJ7XG4gICAgXCJwYXNzd29yZFwiOiBcImU0MzFkNGQ3LWI0MDQtNDVjMC1iYzk2LTk2ZjM0ZjEzYjI2MFwiLFxuICAgIFwic2VydmVyXCI6IFwiODkuMTQ0LjQ3LjE0NFwiLFxuICAgIFwic2VydmVyX3BvcnRcIjogODg4NCxcbiAgICBcInRhZ1wiOiBcInNoYWRvd3Rscy1vdXRcIixcbiAgICBcInRsc1wiOiB7XG4gICAgICAgIFwiZW5hYmxlZFwiOiB0cnVlLFxuICAgICAgICBcInNlcnZlcl9uYW1lXCI6IFwiYWRkb25zLm1vemlsbGEub3JnXCJcbiAgICB9LFxuICAgIFwidHlwZVwiOiBcInNoYWRvd3Rsc1wiLFxuICAgIFwidmVyc2lvblwiOiAzXG59XG4iLCJtYXBwaW5nX3BvcnQiOjAsIm5hbWUiOiIxLXRscy1ub3QtdXNlIiwicG9ydCI6MTA4MCwic29ja3NfcG9ydCI6MH0=
+nekoray://shadowsocks#eyJfdiI6MCwibWV0aG9kIjoiMjAyMi1ibGFrZTMtYWVzLTEyOC1nY20iLCJuYW1lIjoiMi1zcy1ub3QtdXNlIiwicGFzcyI6Im1uVFVXVzB3YWR1RXR0OU11SWJZbkE9PSIsInBvcnQiOjAsInN0cmVhbSI6eyJlZF9sZW4iOjAsImluc2VjdXJlIjpmYWxzZSwibXV4X3MiOjAsIm5ldCI6InRjcCJ9LCJ1b3QiOjB9
+
+# 复制以下固定证书链
+-----BEGIN CERTIFICATE-----
+MIIBbzCCARSgAwIBAgIUKARTSod5UKCSHckzxohpqnre/G8wCgYIKoZIzj0EAwIw
+FjEUMBIGA1UEAwwLbW96aWxsYS5vcmcwHhcNMjYwNTA0MDI1MjMxWhcNMjYxMTIw
+MDI1MjMxWjAWMRQwEgYDVQQDDAttb3ppbGxhLm9yZzBZMBMGByqGSM49AgEGCCqG
+SM49AwEHA0IABKJPteql4aC/17wijFtCq1a98SCuzBwh1Y8xuJLJFm+XFc20RRGr
+BRwmTJD7Fu4D3T9w48/iUKcxZVtzFRx/FuqjQDA+MB0GA1UdEQQWMBSCEmFkZG9u
+cy5tb3ppbGxhLm9yZzAdBgNVHQ4EFgQUIpezOqwP1rNm8HaaALIV1CWKSswwCgYI
+KoZIzj0EAwIDSQAwRgIhAMvp2i9udD8xkWYUat03l+srzaEyQPhPSukg4esfDo3p
+AiEA0o3B21t89lKUJC0FF/gu1FnS0yptefWTN4a+SPLkSmY=
+-----END CERTIFICATE-----
+
+
+*******************************************
+┌────────────────┐
+│                │
+│  ShadowRocket  │
+│                │
+└────────────────┘
+----------------------------
+
+
+
+http2://ZTQzMWQ0ZDctYjQwNC00NWMwLWJjOTYtOTZmMzRmMTNiMjYwOmU0MzFkNGQ3LWI0MDQtNDVjMC1iYzk2LTk2ZjM0ZjEzYjI2MEA4OS4xNDQuNDcuMTQ0Ojg4OTI=?peer=addons.mozilla.org&alpn=h2,http/1.1&padding=1&uot=2&hpkp=CE:8F:2C:D8:18:D4:F9:7C:9D:A6:47:19:ED:15:09:F9:E0:C7:3C:B7:78:AE:9E:07:71:38:E7:D1:BF:D8:CB:96#🇩🇪%20quick-evidence%20naive%20http2
+
+http3://ZTQzMWQ0ZDctYjQwNC00NWMwLWJjOTYtOTZmMzRmMTNiMjYwOmU0MzFkNGQ3LWI0MDQtNDVjMC1iYzk2LTk2ZjM0ZjEzYjI2MEA4OS4xNDQuNDcuMTQ0Ojg4OTI=?peer=addons.mozilla.org&alpn=h3&padding=1&hpkp=CE:8F:2C:D8:18:D4:F9:7C:9D:A6:47:19:ED:15:09:F9:E0:C7:3C:B7:78:AE:9E:07:71:38:E7:D1:BF:D8:CB:96#🇩🇪%20quick-evidence%20naive%20http3
+
+
+*******************************************
+┌────────────────┐
+│                │
+│   Clash Verge  │
+│                │
+└────────────────┘
+----------------------------
+
+  - {name: "🇩🇪 quick-evidence xtls-reality", type: vless, server: 89.144.47.144, port: 8881, uuid: e431d4d7-b404-45c0-bc96-96f34f13b260, network: tcp, udp: true, tls: true, flow: xtls-rprx-vision, servername: addons.mozilla.org, client-fingerprint: firefox, reality-opts: {public-key: 8iKjMSHxotwx5tQNPw9pRP8luJaLSZ2AyViTGasIBTw, short-id: ""}, smux: { enabled: false, protocol: 'h2mux', padding: false, max-connections: '8', min-streams: '16', statistic: true, only-tcp: false }, brutal-opts: { enabled: false, up: '1000 Mbps', down: '1000 Mbps' } }
+
+  - {name: "🇩🇪 quick-evidence hysteria2", type: hysteria2, server: 89.144.47.144, port: 8882, ports: 50000-51000, hop-interval: 30, up: "200 Mbps", down: "1000 Mbps", password: e431d4d7-b404-45c0-bc96-96f34f13b260, sni: addons.mozilla.org, skip-cert-verify: false, fingerprint: 69:1F:BF:6E:86:F6:BF:FB:27:B0:D0:A0:03:8F:08:80:75:C6:5D:2C:DA:5D:8D:BC:AE:71:68:57:E8:06:4D:EC}
+
+  - {name: "🇩🇪 quick-evidence tuic", type: tuic, server: 89.144.47.144, port: 8883, uuid: e431d4d7-b404-45c0-bc96-96f34f13b260, password: e431d4d7-b404-45c0-bc96-96f34f13b260, alpn: [h3], reduce-rtt: true, request-timeout: 8000, udp-relay-mode: native, congestion-controller: bbr, sni: addons.mozilla.org, skip-cert-verify: false, fingerprint: 69:1F:BF:6E:86:F6:BF:FB:27:B0:D0:A0:03:8F:08:80:75:C6:5D:2C:DA:5D:8D:BC:AE:71:68:57:E8:06:4D:EC}
+
+  - {name: "🇩🇪 quick-evidence ShadowTLS", type: ss, server: 89.144.47.144, port: 8884, cipher: 2022-blake3-aes-128-gcm, password: mnTUWW0waduEtt9MuIbYnA==, plugin: shadow-tls, client-fingerprint: firefox, plugin-opts: {host: addons.mozilla.org, password: "e431d4d7-b404-45c0-bc96-96f34f13b260", version: 3}, smux: { enabled: true, protocol: 'h2mux', padding: true, max-connections: '8', min-streams: '16', statistic: true, only-tcp: false }, brutal-opts: { enabled: false, up: '1000 Mbps', down: '1000 Mbps' } }
+
+  - {name: "🇩🇪 quick-evidence shadowsocks", type: ss, server: 89.144.47.144, port: 8885, cipher: 2022-blake3-aes-128-gcm, password: mnTUWW0waduEtt9MuIbYnA==, smux: { enabled: true, protocol: 'h2mux', padding: true, max-connections: '8', min-streams: '16', statistic: true, only-tcp: false }, brutal-opts: { enabled: false, up: '1000 Mbps', down: '1000 Mbps' } }
+
+  - {name: "🇩🇪 quick-evidence trojan", type: trojan, server: 89.144.47.144, port: 8886, password: e431d4d7-b404-45c0-bc96-96f34f13b260, client-fingerprint: firefox, sni: addons.mozilla.org, skip-cert-verify: false, fingerprint: 69:1F:BF:6E:86:F6:BF:FB:27:B0:D0:A0:03:8F:08:80:75:C6:5D:2C:DA:5D:8D:BC:AE:71:68:57:E8:06:4D:EC, smux: { enabled: true, protocol: 'h2mux', padding: true, max-connections: '8', min-streams: '16', statistic: true, only-tcp: false }, brutal-opts: { enabled: false, up: '1000 Mbps', down: '1000 Mbps' } }
+
+  - {name: "🇩🇪 quick-evidence vmess-ws", type: vmess, server: skk.moe, port: 80, uuid: e431d4d7-b404-45c0-bc96-96f34f13b260, udp: true, tls: false, alterId: 0, cipher: auto, network: ws, ws-opts: { path: "/e431d4d7-b404-45c0-bc96-96f34f13b260-vmess", headers: {Host: changed-motivated-trips-united.trycloudflare.com} }, smux: { enabled: true, protocol: 'h2mux', padding: true, max-connections: '8', min-streams: '16', statistic: true, only-tcp: false }, brutal-opts: { enabled: false, up: '1000 Mbps', down: '1000 Mbps' } }
+
+  - {name: "🇩🇪 quick-evidence vless-ws-tls", type: vless, server: skk.moe, port: 443, uuid: e431d4d7-b404-45c0-bc96-96f34f13b260, udp: true, tls: true, servername: changed-motivated-trips-united.trycloudflare.com, network: ws, skip-cert-verify: false, ws-opts: { path: "/e431d4d7-b404-45c0-bc96-96f34f13b260-vless", headers: {Host: changed-motivated-trips-united.trycloudflare.com}, max-early-data: 2560, early-data-header-name: Sec-WebSocket-Protocol }, smux: { enabled: true, protocol: 'h2mux', padding: true, max-connections: '8', min-streams: '16', statistic: true, only-tcp: false }, brutal-opts: { enabled: false, up: '1000 Mbps', down: '1000 Mbps' } }
+
+  - {name: "🇩🇪 quick-evidence h2-reality", type: vless, server: 89.144.47.144, port: 8889, uuid: e431d4d7-b404-45c0-bc96-96f34f13b260, network: http, tls: true, servername: addons.mozilla.org, client-fingerprint: firefox, reality-opts: { public-key: 8iKjMSHxotwx5tQNPw9pRP8luJaLSZ2AyViTGasIBTw, short-id: "" }, smux: { enabled: true, protocol: 'h2mux', padding: true, max-connections: '8', min-streams: '16', statistic: true, only-tcp: false }, brutal-opts: { enabled: false, up: '1000 Mbps', down: '1000 Mbps' } }
+
+  - {name: "🇩🇪 quick-evidence grpc-reality", type: vless, server: 89.144.47.144, port: 8890, uuid: e431d4d7-b404-45c0-bc96-96f34f13b260, network: grpc, tls: true, udp: true, flow: , client-fingerprint: firefox, servername: addons.mozilla.org, grpc-opts: {  grpc-service-name: "grpc" }, reality-opts: { public-key: 8iKjMSHxotwx5tQNPw9pRP8luJaLSZ2AyViTGasIBTw, short-id: "" }, smux: { enabled: true, protocol: 'h2mux', padding: true, max-connections: '8', min-streams: '16', statistic: true, only-tcp: false }, brutal-opts: { enabled: false, up: '1000 Mbps', down: '1000 Mbps' } }
+
+  - {name: "🇩🇪 quick-evidence anytls", type: anytls, server: 89.144.47.144, port: 8891, password: e431d4d7-b404-45c0-bc96-96f34f13b260, client-fingerprint: firefox, udp: true, idle-session-check-interval: 30, idle-session-timeout: 30, sni: addons.mozilla.org, skip-cert-verify: false, fingerprint: 69:1F:BF:6E:86:F6:BF:FB:27:B0:D0:A0:03:8F:08:80:75:C6:5D:2C:DA:5D:8D:BC:AE:71:68:57:E8:06:4D:EC }
+
+*******************************************
+┌────────────────┐
+│                │
+│     Throne     │
+│                │
+└────────────────┘
+
+----------------------------
+
+----------------------------
+
+----------------------------
+s
+
+*******************************************
+┌────────────────┐
+│                │
+│    Sing-box    │
+│                │
+└────────────────┘
+----------------------------
+
+{
+  "outbounds": [
+    {
+      "type": "vless",
+      "tag": "🇩🇪 quick-evidence xtls-reality",
+      "server": "89.144.47.144",
+      "server_port": 8881,
+      "uuid": "e431d4d7-b404-45c0-bc96-96f34f13b260",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "addons.mozilla.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "8iKjMSHxotwx5tQNPw9pRP8luJaLSZ2AyViTGasIBTw",
+          "short_id": ""
+        }
+      },
+      "multiplex": {
+        "enabled": false,
+        "protocol": "h2mux",
+        "max_connections": 8,
+        "min_streams": 16,
+        "padding": false,
+        "brutal": {
+          "enabled": false,
+          "up_mbps": 1000,
+          "down_mbps": 1000
+        }
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇩🇪 quick-evidence hysteria2",
+      "server": "89.144.47.144",
+      "server_port": 8882,
+      "server_ports": [
+        "50000:51000"
+      ],
+      "hop_interval": "30s",
+      "hop_interval_max": "60s",
+      "up_mbps": 200,
+      "down_mbps": 1000,
+      "password": "e431d4d7-b404-45c0-bc96-96f34f13b260",
+      "tls": {
+        "enabled": true,
+        "server_name": "addons.mozilla.org",
+        "certificate_public_key_sha256": [
+          "kdeSXcMkMuRtyeq8VVSC+zVx7CqoSKl4rwjn/tDskio="
+        ],
+        "alpn": [
+          "h3"
+        ]
+      }
+    },
+    {
+      "type": "tuic",
+      "tag": "🇩🇪 quick-evidence tuic",
+      "server": "89.144.47.144",
+      "server_port": 8883,
+      "uuid": "e431d4d7-b404-45c0-bc96-96f34f13b260",
+      "password": "e431d4d7-b404-45c0-bc96-96f34f13b260",
+      "congestion_control": "bbr",
+      "udp_relay_mode": "native",
+      "zero_rtt_handshake": false,
+      "heartbeat": "10s",
+      "tls": {
+        "enabled": true,
+        "server_name": "addons.mozilla.org",
+        "certificate_public_key_sha256": [
+          "kdeSXcMkMuRtyeq8VVSC+zVx7CqoSKl4rwjn/tDskio="
+        ],
+        "alpn": [
+          "h3"
+        ]
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇩🇪 quick-evidence ShadowTLS",
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "mnTUWW0waduEtt9MuIbYnA==",
+      "detour": "shadowtls-out",
+      "udp_over_tcp": false,
+      "multiplex": {
+        "enabled": true,
+        "protocol": "h2mux",
+        "max_connections": 8,
+        "min_streams": 16,
+        "padding": true,
+        "brutal": {
+          "enabled": false,
+          "up_mbps": 1000,
+          "down_mbps": 1000
+        }
+      }
+    },
+    {
+      "type": "shadowtls",
+      "tag": "shadowtls-out",
+      "server": "89.144.47.144",
+      "server_port": 8884,
+      "version": 3,
+      "password": "e431d4d7-b404-45c0-bc96-96f34f13b260",
+      "tls": {
+        "enabled": true,
+        "server_name": "addons.mozilla.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇩🇪 quick-evidence shadowsocks",
+      "server": "89.144.47.144",
+      "server_port": 8885,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "mnTUWW0waduEtt9MuIbYnA==",
+      "multiplex": {
+        "enabled": true,
+        "protocol": "h2mux",
+        "max_connections": 8,
+        "min_streams": 16,
+        "padding": true,
+        "brutal": {
+          "enabled": false,
+          "up_mbps": 1000,
+          "down_mbps": 1000
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇩🇪 quick-evidence trojan",
+      "server": "89.144.47.144",
+      "server_port": 8886,
+      "password": "e431d4d7-b404-45c0-bc96-96f34f13b260",
+      "tls": {
+        "enabled": true,
+        "certificate_public_key_sha256": [
+          "kdeSXcMkMuRtyeq8VVSC+zVx7CqoSKl4rwjn/tDskio="
+        ],
+        "server_name": "addons.mozilla.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "multiplex": {
+        "enabled": true,
+        "protocol": "h2mux",
+        "max_connections": 8,
+        "min_streams": 16,
+        "padding": true,
+        "brutal": {
+          "enabled": false,
+          "up_mbps": 1000,
+          "down_mbps": 1000
+        }
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "🇩🇪 quick-evidence vmess-ws",
+      "server": "skk.moe",
+      "server_port": 80,
+      "uuid": "e431d4d7-b404-45c0-bc96-96f34f13b260",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/e431d4d7-b404-45c0-bc96-96f34f13b260-vmess",
+        "headers": {
+          "Host": "changed-motivated-trips-united.trycloudflare.com"
+        }
+      },
+      "multiplex": {
+        "enabled": true,
+        "protocol": "h2mux",
+        "max_streams": 16,
+        "padding": true,
+        "brutal": {
+          "enabled": false,
+          "up_mbps": 1000,
+          "down_mbps": 1000
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪 quick-evidence vless-ws-tls",
+      "server": "skk.moe",
+      "server_port": 443,
+      "uuid": "e431d4d7-b404-45c0-bc96-96f34f13b260",
+      "tls": {
+        "enabled": true,
+        "server_name": "changed-motivated-trips-united.trycloudflare.com",
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/e431d4d7-b404-45c0-bc96-96f34f13b260-vless",
+        "headers": {
+          "Host": "changed-motivated-trips-united.trycloudflare.com"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "multiplex": {
+        "enabled": true,
+        "protocol": "h2mux",
+        "max_streams": 16,
+        "padding": true,
+        "brutal": {
+          "enabled": false,
+          "up_mbps": 1000,
+          "down_mbps": 1000
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪 quick-evidence h2-reality",
+      "server": "89.144.47.144",
+      "server_port": 8889,
+      "uuid": "e431d4d7-b404-45c0-bc96-96f34f13b260",
+      "tls": {
+        "enabled": true,
+        "server_name": "addons.mozilla.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "8iKjMSHxotwx5tQNPw9pRP8luJaLSZ2AyViTGasIBTw",
+          "short_id": ""
+        }
+      },
+      "transport": {
+        "type": "http"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪 quick-evidence grpc-reality",
+      "server": "89.144.47.144",
+      "server_port": 8890,
+      "uuid": "e431d4d7-b404-45c0-bc96-96f34f13b260",
+      "tls": {
+        "enabled": true,
+        "server_name": "addons.mozilla.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "8iKjMSHxotwx5tQNPw9pRP8luJaLSZ2AyViTGasIBTw",
+          "short_id": ""
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "grpc"
+      }
+    },
+    {
+      "type": "anytls",
+      "tag": "🇩🇪 quick-evidence anytls",
+      "server": "89.144.47.144",
+      "server_port": 8891,
+      "password": "e431d4d7-b404-45c0-bc96-96f34f13b260",
+      "idle_session_check_interval": "30s",
+      "idle_session_timeout": "30s",
+      "min_idle_session": 5,
+      "tls": {
+        "enabled": true,
+        "certificate_public_key_sha256": [
+          "kdeSXcMkMuRtyeq8VVSC+zVx7CqoSKl4rwjn/tDskio="
+        ],
+        "server_name": "addons.mozilla.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "naive",
+      "tag": "🇩🇪 quick-evidence naive http2",
+      "server": "89.144.47.144",
+      "server_port": 8892,
+      "username": "e431d4d7-b404-45c0-bc96-96f34f13b260",
+      "password": "e431d4d7-b404-45c0-bc96-96f34f13b260",
+      "udp_over_tcp": true,
+      "quic": false,
+      "tls": {
+        "enabled": true,
+        "certificate": [
+          "-----BEGIN CERTIFICATE-----",
+          "MIIBbzCCARSgAwIBAgIUKARTSod5UKCSHckzxohpqnre/G8wCgYIKoZIzj0EAwIw",
+          "FjEUMBIGA1UEAwwLbW96aWxsYS5vcmcwHhcNMjYwNTA0MDI1MjMxWhcNMjYxMTIw",
+          "MDI1MjMxWjAWMRQwEgYDVQQDDAttb3ppbGxhLm9yZzBZMBMGByqGSM49AgEGCCqG",
+          "SM49AwEHA0IABKJPteql4aC/17wijFtCq1a98SCuzBwh1Y8xuJLJFm+XFc20RRGr",
+          "BRwmTJD7Fu4D3T9w48/iUKcxZVtzFRx/FuqjQDA+MB0GA1UdEQQWMBSCEmFkZG9u",
+          "cy5tb3ppbGxhLm9yZzAdBgNVHQ4EFgQUIpezOqwP1rNm8HaaALIV1CWKSswwCgYI",
+          "KoZIzj0EAwIDSQAwRgIhAMvp2i9udD8xkWYUat03l+srzaEyQPhPSukg4esfDo3p",
+          "AiEA0o3B21t89lKUJC0FF/gu1FnS0yptefWTN4a+SPLkSmY=",
+          "-----END CERTIFICATE-----"
+        ],
+        "server_name": "addons.mozilla.org"
+      }
+    },
+    {
+      "type": "naive",
+      "tag": "🇩🇪 quick-evidence naive quic",
+      "server": "89.144.47.144",
+      "server_port": 8892,
+      "username": "e431d4d7-b404-45c0-bc96-96f34f13b260",
+      "password": "e431d4d7-b404-45c0-bc96-96f34f13b260",
+      "udp_over_tcp": false,
+      "quic": true,
+      "quic_congestion_control": "bbr",
+      "tls": {
+        "enabled": true,
+        "certificate": [
+          "-----BEGIN CERTIFICATE-----",
+          "MIIBbzCCARSgAwIBAgIUKARTSod5UKCSHckzxohpqnre/G8wCgYIKoZIzj0EAwIw",
+          "FjEUMBIGA1UEAwwLbW96aWxsYS5vcmcwHhcNMjYwNTA0MDI1MjMxWhcNMjYxMTIw",
+          "MDI1MjMxWjAWMRQwEgYDVQQDDAttb3ppbGxhLm9yZzBZMBMGByqGSM49AgEGCCqG",
+          "SM49AwEHA0IABKJPteql4aC/17wijFtCq1a98SCuzBwh1Y8xuJLJFm+XFc20RRGr",
+          "BRwmTJD7Fu4D3T9w48/iUKcxZVtzFRx/FuqjQDA+MB0GA1UdEQQWMBSCEmFkZG9u",
+          "cy5tb3ppbGxhLm9yZzAdBgNVHQ4EFgQUIpezOqwP1rNm8HaaALIV1CWKSswwCgYI",
+          "KoZIzj0EAwIDSQAwRgIhAMvp2i9udD8xkWYUat03l+srzaEyQPhPSukg4esfDo3p",
+          "AiEA0o3B21t89lKUJC0FF/gu1FnS0yptefWTN4a+SPLkSmY=",
+          "-----END CERTIFICATE-----"
+        ],
+        "server_name": "addons.mozilla.org"
+      }
+    }
+  ]
+}
+
+
+
+  各客户端配置文件路径: /etc/sing-box/subscribe/
+ 完整模板可参照:
+ https://github.com/chika0801/sing-box-examples/tree/main/Tun
+
+
+*******************************************
+
+Index:
+http://89.144.47.144:21946/e431d4d7-b404-45c0-bc96-96f34f13b260/
+
+QR code:
+http://89.144.47.144:21946/e431d4d7-b404-45c0-bc96-96f34f13b260/qr
+
+V2rayN 订阅:
+http://89.144.47.144:21946/e431d4d7-b404-45c0-bc96-96f34f13b260/v2rayn
+
+Throne 订阅:
+http://89.144.47.144:21946/e431d4d7-b404-45c0-bc96-96f34f13b260/neko
+
+Clash 订阅:
+http://89.144.47.144:21946/e431d4d7-b404-45c0-bc96-96f34f13b260/clash
+http://89.144.47.144:21946/e431d4d7-b404-45c0-bc96-96f34f13b260/clash2
+
+SFI / SFA / SFM 订阅:
+http://89.144.47.144:21946/e431d4d7-b404-45c0-bc96-96f34f13b260/sing-box
+
+ShadowRocket 订阅:
+http://89.144.47.144:21946/e431d4d7-b404-45c0-bc96-96f34f13b260/shadowrocket
+
+*******************************************
+
+ 自适应 Clash / V2rayN / Throne / ShadowRocket / SFI / SFA / SFM 客户端:
+模版 1:
+http://89.144.47.144:21946/e431d4d7-b404-45c0-bc96-96f34f13b260/auto
+
+模版 2:
+http://89.144.47.144:21946/e431d4d7-b404-45c0-bc96-96f34f13b260/auto2
+
+ 订阅 QRcode:
+模版 1:
+https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=http://89.144.47.144:21946/e431d4d7-b404-45c0-bc96-96f34f13b260/auto
+
+模版 2:
+https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=http://89.144.47.144:21946/e431d4d7-b404-45c0-bc96-96f34f13b260/auto2
+
+模版 1:
+█▀▀▀▀▀▀▀██▀██████▀█▀▀▀▀█▀██▀▀▀▀▀▀▀█
+█ █▀▀▀█ █▄ ▀ ▄▄█▄▄▄▄█   ▀██ █▀▀▀█ █
+█ █   █ █▄▄▀▄▀▄▀▄▄▄▄▀▄▀▀  █ █   █ █
+█ ▀▀▀▀▀ █ █ █▀▄▀▄ █ █▀▄ █ █ ▀▀▀▀▀ █
+█▀▀▀▀▀█▀▀▀▀▀█ ▀█ ▀▀ █ ▄█▄█▀█▀█▀█▀██
+██▀▀█▄▀▀▄  █▀▀▀ ▀█▄▄▄▀▄▄▄  ▄ ███▄▄█
+█▀▄▀▄▀█▀▀  ▄ █▀█▀▄▀█▀▄▄▄██▄▄█▀█▄███
+██▀▀▄██▀█▀  █▄█▄▀▄▀ ▄█ ▄▄▄▀  ▀ █ ▄█
+██▄██▄ ▀▄█▀▄█ ▀█  ▀▄█ ▄ ▀▄█▄▀ █▄▀██
+█ ▀▀▄▀ ▀▀▀ ▄▀▀ ▀▀▀▀ ▄█ ▀▄▄▄▄ █ █ ▄█
+███ ██▀▀▀▄▄  █▀ ▀▀▀▀█▀▄██▄▄██▀▀▄▀██
+█ ▄▀  █▀█▄▄██▄██▀█▄▀▄█  ▄  ▄ ██▀ ▄█
+█ ███▄█▀▄ ▀ █ ▀ ▀▄▀▀█ ▄▀▄ ▀▀▀▀▀▄█▀█
+█▀▀▀▀▀▀▀█ ▄ ▀▀█ ▀▄▀█▄█ ▀  █▀█ ▀▀▀▄█
+█ █▀▀▀█ █▀▄█ ▀▀ ▀ ▀ ▄█▄██ ▀▀▀ █▄▀██
+█ █   █ █ ▀▄█▄█ ▀▀▄▄▄ ▄ ██▀▀▀▄▄█▀██
+█ ▀▀▀▀▀ █ ▀▀ ▀▀▀▄▀▀▀▀▄▄▄▄▀▄█▀█▀▄▀██
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+模版 2:
+█▀▀▀▀▀▀▀███▀█▀███▀█▀▀▀▀█▀██▀▀▀▀▀▀▀█
+█ █▀▀▀█ █▄█▄█▀▄█▄▄▄▄█   ▀██ █▀▀▀█ █
+█ █   █ █▄ ▄█▄▄▀▄▄▄▄▀▄▀▀  █ █   █ █
+█ ▀▀▀▀▀ █ ▄▀▄ ▄▀▄ █ █▀▄ █ █ ▀▀▀▀▀ █
+█▀▀▀▀▀█▀▀▀ ▄ █▀█ ▀▀ █ ▄█▄█▀█▀█▀█▀██
+█▀ ▀▄▀▄▀▀ █ █▄▀ ▀█▄▄▄▀▄▄▄  ▄ ███▄▄█
+██▀ ██▄▀▀ ▀▀█ ▀█▀▄▀█▀▄▄▄██▄▄█▀█▄███
+█ ▄▄██▄▀▄▄▀▀▀▀█▄▀▄▀ ▄█ ▄▄▄▀  ▀ █ ▄█
+█▀ ▀█▄▄▀▄██▀ █▀█  ▀▄█ ▄ ▀▄█▄▀ █▄▀██
+█ ██▄  ▀▀▄█▄█▄ ▀▀▀▀ ▄█ ▀▄▄▄▄ █ █ ▄█
+█▀▄█   ▀▀▀  █ ▀ ▀▀▀▀█▀▄██▄▄██▀▀▄▀██
+█ █  █▀▀▀▄▄ ▀▀██▀█▄▀▄█  ▄  ▄ ██▀ ▄█
+█ █▀▄▀ ▀█  ▀ ▀▀ ▀▄▀▀█ ▄▀▄ ▀▀▀▀▀▄█▀█
+█▀▀▀▀▀▀▀█ ▄██ █ ▀▄▀█▄█ ▀  █▀█ ▀▀▀▄█
+█ █▀▀▀█ █▀▀▀▄▄▀ ▀ ▀ ▄█▄██ ▀▀▀ █▄ ██
+█ █   █ █ ▄█▄▄█ ▀▀▄▄▄ ▄ ██▀▀▀▄▄█▀██
+█ ▀▀▀▀▀ █ ▀  ▀▀▀▄▀▀▀▀▄▄▄▄▀▄█▀█▀▄▀██
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+
+*******************************************
+
+ 脚本当天运行次数: 254，累计运行次数: 839454 
+
+
+ 创建快捷 [ sb ] 指令成功! 
