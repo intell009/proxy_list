@@ -24,3 +24,4 @@ vless://5786d86f-7731-4174-b1a3-84297e54b015@151.241.137.132:443?encryption=none
 vless://5786d86f-7731-4174-b1a3-84297e54b015@finland.ali-bard.online:443?type=tcp&headerType=none&security=reality&encryption=none&sni=finland.ali-bard.online&fp=edge&pbk=SB1uC0OEveYjSiS_Nuw9Ld-uVVXWqi794OGnldthY3I&flow=xtls-rprx-vision#🇫🇮-0029
 vless://91d734be-a3d0-4d50-83ab-74cf7b6966fa@144.31.215.227:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=LEoyslGYLVf2XWq9Bkq8Hod-EsB3ZoTlvR5AKK3rciQ&security=reality&sid=c885e8f8&sni=cdn-de.bulkavpn.top&type=tcp#🇩🇪-0014
 vless://cb784d00-d34a-4389-b938-8717f7b28353@81.90.17.164:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=chrome&pbk=v0XQn6uvyC8q5CThcRYLer1F1OOYpZDn5NLOvDicaWg&sid=b31c2b75add2e5fa&sni=yastatic.net#🇵🇱-0018
+vless://4d4bfd21-88fc-4de7-87bd-c2ddaedc4078@34.154.47.33:443?type=tcp&security=reality&fp=firefox&pbk=jGfJxbIyf2aLRFQyT9NsJBu1CzJmrAa2sF19GNw46z8&sid=29615707650b941d&sni=www.cloudflare.com#🇮🇹-0006
