@@ -5,8 +5,6 @@ hysteria2://3f63c86c-ac4a-4900-85cf-4fedf93c2ca5@91.240.86.70:24443?security=tls
 hysteria2://3f63c86c-ac4a-4900-85cf-4fedf93c2ca5@91.240.86.70:24443?security=tls&sni=hy.quattro-tech.ru&allowInsecure=true&alpn=h3#%F0%9F%87%B1%F0%9F%87%BB%20Latvia%20[*CIDR]
 hysteria2://3f63c86c-ac4a-4900-85cf-4fedf93c2ca5@91.240.86.70:24443?security=tls&sni=hy.quattro-tech.ru#%F0%9F%87%B1%F0%9F%87%BB%20Latvia%20[*CIDR]
 hysteria2://3f63c86c-ac4a-4900-85cf-4fedf93c2ca5@91.240.86.70:24443?security=tls&sni=hy.quattro-tech.ru&allowInsecure=true#%F0%9F%87%B1%F0%9F%87%BB%20Latvia%20[*CIDR]
-hysteria2://3f63c86c-ac4a-4900-85cf-4fedf93c2ca5@91.240.86.70:24443?security=tls&sni=hy.quattro-tech.ru#%F0%9F%87%B1%F0%9F%87%BB%20Latvia%20[*CIDR]
-hysteria2://3f63c86c-ac4a-4900-85cf-4fedf93c2ca5@91.240.86.70:24443?security=tls&sni=hy.quattro-tech.ru&fp=random#%F0%9F%87%B1%F0%9F%87%BB%20Latvia%20[*CIDR]
 hysteria2://mkL3AfdSZIpTWRB9TcWPn9vywPGN89MRHg3ToRDj@64.188.98.171:443?security=tls&sni=germany3.h2corp.local&allowInsecure=true#%F0%9F%87%A9%F0%9F%87%AA%20Germany,%20Frankfurt%20am%20Main%20%7C%20[BL]
 hysteria2://06e88dd6-e264-4981-8c26-d7ab17348ab2@2.27.29.120:443?security=tls&sni=de01.clgate.network#%F0%9F%87%A9%F0%9F%87%AA%20Germany,%20Frankfurt%20am%20Main%20(Innenstadt%20I)%20%7C%20%F0%9F%8C%90%20%7C%20[BL]
 vless://adc11f30-e4cb-4985-bf5e-f9ded69c019f@188.225.79.44:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI&security=reality&sid=db04ce8bdb8900f1&sni=eh.vk.ru&type=raw#🇵🇱-0004
