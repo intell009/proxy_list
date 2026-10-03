@@ -1,7 +1,4 @@
-hysteria2://3f63c86c-ac4a-4900-85cf-4fedf93c2ca5@91.240.86.70:24443?security=tls&sni=hy.quattro-tech.ru&fp=random#%F0%9F%87%B1%F0%9F%87%BB%20Latvia%20[*CIDR]
-hysteria2://3f63c86c-ac4a-4900-85cf-4fedf93c2ca5@91.240.86.70:24443?security=tls&sni=hy.quattro-tech.ru&allowInsecure=true#%F0%9F%87%B1%F0%9F%87%BB%20Latvia%20[*CIDR]
-hysteria2://3f63c86c-ac4a-4900-85cf-4fedf93c2ca5@91.240.86.70:24443?security=tls&sni=hy.quattro-tech.ru&allowInsecure=true&alpn=h3#%F0%9F%87%B1%F0%9F%87%BB%20Latvia%20[*CIDR]
-hysteria2://3f63c86c-ac4a-4900-85cf-4fedf93c2ca5@91.240.86.70:24443?security=tls&sni=hy.quattro-tech.ru#%F0%9F%87%B1%F0%9F%87%BB%20Latvia%20[*CIDR]
+
 ###_Estonia_🇪🇪
 
 vless://8f6e49e6-7f03-4f10-9da9-1716158d80ed@5.181.202.58:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=eston3.o4ka-internet.com&fp=random&pbk=V2JprbR_aJkS7uX6anyU3nrswGxdvDQT2HpY4WnzuC8&sid=5629431325884ff0&packetEncoding=xudp#🇪🇪-0001
