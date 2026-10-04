@@ -1,1 +1,60 @@
+# Скрипт проверки сетевых настроек и утечек для VPN
+Clear-Host
+Write-Host "==========================================" -ForegroundColor Cy
+Write-Host "   Проверка сетевых параметров и VPN     " -ForegroundColor Cy
+Write-Host "==========================================" -ForegroundColor Cy
+Write-Host ""
+
+# 1. Проверка внешнего IP и геопозиции
+Write-Host "[1/3] Запрос внешнего IP и страны..." -ForegroundColor Yellow
+try {
+    $ipInfo = Invoke-RestMethod -Uri "https://ipapi.co/json/" -TimeoutSec 5 -ErrorAction Stop
+    Write-Host "  • Внешний IP: " -NoNewline
+    Write-Host "$($ipInfo.ip)" -ForegroundColor Green
+    Write-Host "  • Страна:     " -NoNewline
+    Write-Host "$($ipInfo.country_name) ($($ipInfo.country_code))" -ForegroundColor Green
+    Write-Host "  • Город:      " -NoNewline
+    Write-Host "$($ipInfo.city)" -ForegroundColor Green
+    Write-Host "  • Провайдер:  " -NoNewline
+    Write-Host "$($ipInfo.org)" -ForegroundColor Green
+
+    if ($ipInfo.country_code -eq "RU") {
+        Write-Host "  [!] ВНИМАНИЕ: Трафик идёт через РФ! VPN не работает или идет утечка." -ForegroundColor Red
+    } else {
+        Write-Host "  [✓] Внешний IP изменен на не-РФ регион." -ForegroundColor Green
+    }
+} catch {
+    Write-Host "  [!] Не удалось определить внешний IP (проверьте подключение к интернету)." -ForegroundColor Red
+}
+
+Write-Host ""
+
+# 2. Проверка активных DNS-серверов
+Write-Host "[2/3] Проверка используемых DNS-серверов..." -ForegroundColor Yellow
+$dnsServers = Get-DnsClientServerAddress -AddressFamily IPv4 | Where-Object { $_.ServerAddresses -ne $null }
+foreach ($dns in $dnsServers) {
+    $interface = Get-NetAdapter -InterfaceIndex $dns.InterfaceIndex
+    Write-Host "  • Интерфейс: $($interface.InterfaceAlias) ($($interface.Status))" -ForegroundColor Cyan
+    foreach ($addr in $dns.ServerAddresses) {
+        Write-Host "    - DNS Server: $addr" -ForegroundColor White
+    }
+}
+
+Write-Host ""
+
+# 3. Проверка состояния IPv6 на активных адаптерах
+Write-Host "[3/3] Проверка протокола IPv6..." -ForegroundColor Yellow
+$activeAdapters = Get-NetAdapter | Where-Object { $_.Status -eq "Up" }
+
+foreach ($adapter in $activeAdapters) {
+    $ipv6Binding = Get-NetAdapterBinding -Name $adapter.Name -ComponentID "ms_tcpip6" -ErrorAction SilentlyContinue
+    if ($ipv6Binding.Enabled) {
+        Write-Host "  [!] IPv6 ВКЛЮЧЕН на адаптере '$($adapter.Name)' (возможна утечка трафика)." -ForegroundColor Yellow
+    } else {
+        Write-Host "  [✓] IPv6 отключен на адаптере '$($adapter.Name)'." -ForegroundColor Green
+    }
+}
+
+Write-Host ""
+Write-Host "==========================================" -ForegroundColor Cy
 
