@@ -73,8 +73,20 @@ Write-Host ""
 Write-Host "==========================================" -ForegroundColor Cyan
 
 
+# 1. Принудительно задаем сторонние DNS на Wi-Fi адаптер (убираем утечку роутера)
+Set-DnsClientServerAddress -InterfaceAlias "Беспроводная сеть" -ServerAddresses ("1.1.1.1", "8.8.8.8")
+
+# 2. Полностью выключаем IPv6 на Wi-Fi адаптере
+Disable-NetAdapterBinding -Name "Беспроводная сеть" -ComponentID "ms_tcpip6"
 
 Set-DnsClientServerAddress -InterfaceAlias "Беспроводная сеть" -ServerAddresses ("1.1.1.1", "8.8.8.8")
 
 Set-DnsClientServerAddress -InterfaceAlias "Беспроводная сеть" -ResetServerAddresses
+===================================================
+===================================================
+Очистите кэш и сокеты браузера:
+В браузере нажмите Ctrl + Shift + Delete и удалите Кэш и Файлы cookie за всё время (либо просто открывайте сервис в окне Инкогнито Ctrl + Shift + N). Это нужно, чтобы браузер не отдавал старые сохранённые данные о вашем местоположении из РФ.
 
+Сбросьте локальный кэш DNS в Windows:
+Выполните в вашей консоли PowerShell команду:
+Clear-DnsClientCache
