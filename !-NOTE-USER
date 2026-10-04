@@ -140,5 +140,10 @@ Set-DnsClientServerAddress -InterfaceAlias "Беспроводная сеть" -
 
 Set-DnsClientServerAddress -InterfaceAlias "Беспроводная сеть" -ResetServerAddresses
 
+# 1. Принудительно задаем сторонние DNS на Wi-Fi адаптер (убираем утечку роутера)
+Set-DnsClientServerAddress -InterfaceAlias "Беспроводная сеть" -ServerAddresses ("1.1.1.1", "8.8.8.8")
+
+# 2. Полностью выключаем IPv6 на Wi-Fi адаптере
+Disable-NetAdapterBinding -Name "Беспроводная сеть" -ComponentID "ms_tcpip6"
 
 
