@@ -73,15 +73,31 @@ Write-Host ""
 Write-Host "==========================================" -ForegroundColor Cyan
 
 
+
+
+Чтобы принудительно убрать утечку DNS через роутер (192.168.1.1)
+Если VPN-клиент сам не перехватывает DNS, пропишите безопасные DNS (Cloudflare / Google) напрямую на адаптер Wi-Fi:
+
+PowerShell
+Set-DnsClientServerAddress -InterfaceAlias "Беспроводная сеть" -ServerAddresses ("1.1.1.1", "8.8.8.8")
+Сбросить обратно на автоматическое получение от роутера:
+
+PowerShell
+Set-DnsClientServerAddress -InterfaceAlias "Беспроводная сеть" -ResetServerAddresses
+
+===================================================
+===================================================
+
+Финальный фикс в 2 строки
+Запустите в PowerShell только эти две команды (без сброса):
+
 # 1. Принудительно задаем сторонние DNS на Wi-Fi адаптер (убираем утечку роутера)
 Set-DnsClientServerAddress -InterfaceAlias "Беспроводная сеть" -ServerAddresses ("1.1.1.1", "8.8.8.8")
 
 # 2. Полностью выключаем IPv6 на Wi-Fi адаптере
 Disable-NetAdapterBinding -Name "Беспроводная сеть" -ComponentID "ms_tcpip6"
 
-Set-DnsClientServerAddress -InterfaceAlias "Беспроводная сеть" -ServerAddresses ("1.1.1.1", "8.8.8.8")
 
-Set-DnsClientServerAddress -InterfaceAlias "Беспроводная сеть" -ResetServerAddresses
 ===================================================
 ===================================================
 Очистите кэш и сокеты браузера:
