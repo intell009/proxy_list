@@ -58,3 +58,87 @@ foreach ($adapter in $activeAdapters) {
 Write-Host ""
 Write-Host "==========================================" -ForegroundColor Cy
 
+
+
+
+
+Clear-Host
+Write-Host "==========================================" -ForegroundColor Cyan
+Write-Host "   Проверка сетевых параметров и VPN     " -ForegroundColor Cyan
+Write-Host "==========================================" -ForegroundColor Cyan
+Write-Host ""
+
+# 1. Проверка внешнего IP и геопозиции через альтернативный API
+Write-Host "[1/3] Запрос внешнего IP и страны..." -ForegroundColor Yellow
+try {
+    $ipInfo = Invoke-RestMethod -Uri "http://ip-api.com/json/?fields=status,message,country,countryCode,regionName,city,zip,lat,lon,timezone,isp,org,as,query" -TimeoutSec 5 -ErrorAction Stop
+    if ($ipInfo.status -eq "success") {
+        Write-Host "  • Внешний IP: " -NoNewline
+        Write-Host "$($ipInfo.query)" -ForegroundColor Green
+        Write-Host "  • Страна:     " -NoNewline
+        Write-Host "$($ipInfo.country) ($($ipInfo.countryCode))" -ForegroundColor Green
+        Write-Host "  • Город:      " -NoNewline
+        Write-Host "$($ipInfo.city)" -ForegroundColor Green
+        Write-Host "  • Провайдер:  " -NoNewline
+        Write-Host "$($ipInfo.isp)" -ForegroundColor Green
+
+        if ($ipInfo.countryCode -eq "RU") {
+            Write-Host "  [!] ВНИМАНИЕ: Трафик идёт через РФ! VPN не скрывает ваш IP." -ForegroundColor Red
+        } else {
+            Write-Host "  [✓] Внешний IP изменен на не-РФ регион ($($ipInfo.countryCode))." -ForegroundColor Green
+        }
+    }
+} catch {
+    Write-Host "  [!] Ошибка API. Пробуем резервный ipify.org..." -ForegroundColor Red
+    try {
+        $myIp = (Invoke-RestMethod -Uri "https://api.ipify.org?format=json" -TimeoutSec 5).ip
+        Write-Host "  • Внешний IP: $myIp" -ForegroundColor Yellow
+    } catch {
+        Write-Host "  [!] Внешний IP определить не удалось." -ForegroundColor Red
+    }
+}
+
+Write-Host ""
+
+# 2. Проверка DNS
+Write-Host "[2/3] Проверка используемых DNS-серверов..." -ForegroundColor Yellow
+$dnsServers = Get-DnsClientServerAddress -AddressFamily IPv4 | Where-Object { $_.ServerAddresses -ne $null }
+foreach ($dns in $dnsServers) {
+    $interface = Get-NetAdapter -InterfaceIndex $dns.InterfaceIndex
+    Write-Host "  • Интерфейс: $($interface.InterfaceAlias) ($($interface.Status))" -ForegroundColor Cyan
+    foreach ($addr in $dns.ServerAddresses) {
+        if ($addr -match "^(192\.168\.|10\.|172\.(1[6-9]|2[0-9]|3[0-1]))") {
+            Write-Host "    - DNS Server: $addr [УТЕЧКА: Роутер/Локальная сеть]" -ForegroundColor Red
+        } else {
+            Write-Host "    - DNS Server: $addr" -ForegroundColor Green
+        }
+    }
+}
+
+Write-Host ""
+
+# 3. Проверка IPv6
+Write-Host "[3/3] Проверка протокола IPv6..." -ForegroundColor Yellow
+$activeAdapters = Get-NetAdapter | Where-Object { $_.Status -eq "Up" }
+
+foreach ($adapter in $activeAdapters) {
+    $ipv6Binding = Get-NetAdapterBinding -Name $adapter.Name -ComponentID "ms_tcpip6" -ErrorAction SilentlyContinue
+    if ($ipv6Binding.Enabled) {
+        Write-Host "  [!] IPv6 ВКЛЮЧЕН на '$($adapter.Name)' (возможна утечка)." -ForegroundColor Red
+    } else {
+        Write-Host "  [✓] IPv6 отключен на '$($adapter.Name)'." -ForegroundColor Green
+    }
+}
+
+Write-Host ""
+Write-Host "==========================================" -ForegroundColor Cyan
+
+
+
+
+Set-DnsClientServerAddress -InterfaceAlias "Беспроводная сеть" -ServerAddresses ("1.1.1.1", "8.8.8.8")
+
+Set-DnsClientServerAddress -InterfaceAlias "Беспроводная сеть" -ResetServerAddresses
+
+
+
