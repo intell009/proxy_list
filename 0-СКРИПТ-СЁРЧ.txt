@@ -1,4 +1,31 @@
 ﻿==================== GITHUB SEC‑SEARCH CHECKLIST ====================
+"anytls://"
+"http://"
+"https://"
+"juicity://"
+"mierus://"
+"naive://"
+"naive+https://"
+"naive+quic://"
+"snell://"
+"ss://"
+"ssr://"
+"ssh://"
+"socks://"
+"socks4://"
+"socks4a://"
+"socks5://"
+"shadowtls://"
+"trojan://"
+"tor://"
+"tuic://"
+"wg://"
+"wireguard://"
+"awg://"
+"vmess://"
+"vless://"
+
+
 
 [1] ДИРЕКТОРИИ, ГДЕ ЧАЩЕ ВСЕГО ЛЕЖАТ РЕАЛЬНЫЕ КОНФИГИ
 backup/
