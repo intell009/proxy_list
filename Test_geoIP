@@ -44,6 +44,12 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.46:80
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.54:8080#🇳🇱
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.7:8080#🇳🇱
 ss://YWVzLTEyOC1jZmI6c2hhZG93c29ja3M=@109.201.152.181:443#🇳🇱
+wg://8.6.112.148:890?private_key=CA5hC3uHZ2z6xjszl8vVVpk9mUiyT/Qp23HjQIfchFw%3D&local_address=172.16.0.2/32&mtu=1280&public_key=bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo%3D&reserved=212-58-65#%F0%9F%87%BA%F0%9F%87%B8-0001+
+wg://8.6.112.3:4198?private_key=KMcpEMx3V6RWAqRWJE/wNo7g1L1uCml3cXDLSoVE+V4%3D&local_address=172.16.0.2/32-2606:4700:110:83d9:fbcf:ccdb:1ac9:560/128&mtu=1280&public_key=bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo%3D&reserved=40-230-28#%F0%9F%87%BA%F0%9F%87%B8-0002
+wg://8.6.112.96:2408?private_key=OI2WZB3lb9hyxcezeN6STYgntx0WRI9hlza5CNaB1Xo%3D&local_address=172.16.0.2/32&mtu=1280&public_key=bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo%3D&reserved=0-0-0#%F0%9F%87%BA%F0%9F%87%B8-0003
+wg://188.114.96.99:891?private_key=6AI+/KrAG4PH2UzNCL0Dcv22a6uIkxRF6eRdoMExtU8%3D&local_address=172.16.0.2/32-2606:4700:110:8f81:d551:a0:532e:a2b3/128&mtu=1280&public_key=bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo%3D&reserved=4-228-52#%F0%9F%87%BA%F0%9F%87%B8-0004
+wg://8.34.146.194:1843?private_key=wC+nmFNybW8dEcuGtTkjw5MrcyHYoXEJMOz7PBJqQ0g%3D&local_address=172.16.0.2/32-2606:4700:110:846c:e510:bfa1:ea9f:5247/128&mtu=1330&public_key=bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo%3D&reserved=233-127-100&persistent_keepalive_interval=10#%F0%9F%87%BA%F0%9F%87%B8-0005
+wg://8.34.146.194:1843?private_key=wC+nmFNybW8dEcuGtTkjw5MrcyHYoXEJMOz7PBJqQ0g%3D&local_address=172.16.0.2/32-2606:4700:110:846c:e510:bfa1:ea9f:5247/128&public_key=bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo%3D&reserved=233-127-100#%F0%9F%87%BA%F0%9F%87%B8-0006
 trojan://50414e45-4c5f-5a45-5553-6b297c3f248c@104.16.76.92:2052?type=ws&host=khzu6eezu32s.oczuloepuy8s.workers.dev&path=/stream/PANEL_ZEUS/6b297c3f248c#🇫🇷
 trojan://50414e45-4c5f-5a45-5553-6b297c3f248c@104.16.76.92:80?type=ws&host=khzu6eezu32s.oczuloepuy8s.workers.dev&path=/stream/PANEL_ZEUS/6b297c3f248c#🇫🇷
 trojan://50414e45-4c5f-5a45-5553-6b297c3f248c@104.16.76.92:8080?type=ws&host=khzu6eezu32s.oczuloepuy8s.workers.dev&path=/stream/PANEL_ZEUS/6b297c3f248c#🇫🇷
