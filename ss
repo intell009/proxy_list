@@ -1,7 +1,8 @@
 hysteria2://a35c508f-4d5d-4531-842e-6e9d43c762c0@13.143.189.102:4444?security=tls&sni=pl1.nexfile.net#%F0%9F%87%B5%F0%9F%87%B1
 hysteria2://a35c508f-4d5d-4531-842e-6e9d43c762c0@13.143.189.102:4444?security=tls&sni=pl1.nexfile.net&alpn=h3#%F0%9F%87%B5%F0%9F%87%B1
 hysteria2://65ec84f5-0dd4-4582-8b4f-592e50b22116@23.156.153.18:38080?obfs=salamander&obfs-password=qzOK2ChVkFhEdqn1&security=tls&sni=hk-mm2.473221.xyz#%F0%9F%87%BA%F0%9F%87%B3
-hysteria2://146d567c-6335-4e63-a8aa-7ec068642440@201.8.64.7:443?security=tls&sni=nlll.obxodvpn.us#%F0%9F%87%B3%F0%9F%87%B1ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpINEpIa0hVMnBJUloxc2JydVEtcDM5R3JoMXo2bnhZOA==@dns27.m3hrzd.ir:8044#%F0%9F%87%B3%F0%9F%87%B1-0002
+hysteria2://146d567c-6335-4e63-a8aa-7ec068642440@201.8.64.7:443?security=tls&sni=nlll.obxodvpn.us#%F0%9F%87%B3%F0%9F%87%B1
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpINEpIa0hVMnBJUloxc2JydVEtcDM5R3JoMXo2bnhZOA==@dns27.m3hrzd.ir:8044#%F0%9F%87%B3%F0%9F%87%B1-0002
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpINEpIa0hVMnBJUloxc2JydVEtcDM5R3JoMXo2bnhZOA==@185.4.115.146:8044#%F0%9F%87%B3%F0%9F%87%B1-0004
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp0QUdHemdSQ2k2Vzk1VXdHMHFlcmY2@87.228.61.175:1443#%F0%9F%87%B1%F0%9F%87%BA-0001
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpEWVZxRkRuWW9NcXVSUXVuWEMxeGQyRnl1RGhkN0pXczVqdGYyZWI3VmtLTHpYZ1p2OHB0OGdZMWU5MVRUNzFWNzYyelJYN01XVzRIbWphdmFuWWRVRjliaWo4Z0c4QVA=@104.222.183.180:47195#%F0%9F%87%AC%F0%9F%87%A7-0001
