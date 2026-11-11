@@ -39,6 +39,14 @@ trojan://50414e45-4c5f-5a45-5553-6b297c3f248c@104.19.253.90:8080?type=ws&host=kh
 trojan://50414e45-4c5f-5a45-5553-6b297c3f248c@89.116.250.217:2052?type=ws&host=khzu6eezu32s.oczuloepuy8s.workers.dev&path=/stream/PANEL_ZEUS/6b297c3f248c#%F0%9F%87%AB%F0%9F%87%B7-0039
 trojan://50414e45-4c5f-5a45-5553-6b297c3f248c@167.68.11.235:8880?type=ws&host=khzu6eezu32s.oczuloepuy8s.workers.dev&path=/stream/PANEL_ZEUS/6b297c3f248c#%F0%9F%87%AB%F0%9F%87%B7-0040
 
+
+trojan://AyV9-9TeAzno_FbR@uitestexrt-production.up.railway.app:443?security=tls&sni=uitestexrt-production.up.railway.app&alpn=http/1.1&fp=chrome&type=ws&host=uitestexrt-production.up.railway.app&path=/api/SBp7_G#%F0%9F%87%BA%F0%9F%87%B8
+trojan://c6683832-d6e2-4814-ab10-77cf4ab27368@162.159.138.85:443?security=tls&sni=kvprotocol.de5.net&allowInsecure=true#%F0%9F%87%BA%F0%9F%87%B8
+trojan://PQVv-hPhUuGHIHW3@testuxewqa-production.up.railway.app:443?security=tls&sni=testuxewqa-production.up.railway.app&alpn=http/1.1&fp=chrome&type=ws&host=testuxewqa-production.up.railway.app&path=/api/FY1s2b#%F0%9F%87%BA%F0%9F%87%B8
+trojan://883e3cc8-9613-4f2d-8c42-0dd3d429db55@104.17.10.171:443#%F0%9F%87%BA%F0%9F%87%B8
+trojan://3ce09306-9819-4988-b88e-25be291305e7@us3-2.998998.best:443?security=tls&sni=nat3.xxai.dpdns.org&allowInsecure=true&type=ws&host=nat3.xxai.dpdns.org&path=/anyway#%F0%9F%87%BA%F0%9F%87%B8
+trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@139.84.231.142:443?security=tls&sni=explorecareerpathsandunlockprofessionalsuccesstoday.com&fp=chrome#%F0%9F%87%BF%F0%9F%87%A6
+trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@139.84.231.142:443?security=tls&sni=explorecareerpathsandunlockprofessionalsuccesstoday.com#%F0%9F%87%BF%F0%9F%87%A6
 trojan://duJyVGgB2y0tCFs37Y89NE1fMHXk8C5j@cdn10.yabenzin.app:443?security=tls&sni=cdn10.yabenzin.app&alpn=h2&fp=firefox&type=grpc&serviceName=TrojanGRPC#%F0%9F%87%B7%F0%9F%87%BA
 trojan://duJyVGgB2y0tCFs37Y89NE1fMHXk8C5j@45.146.88.103:443?security=tls&sni=cdn2.yabenzin.app&alpn=h2&type=grpc&serviceName=TrojanGRPC#%F0%9F%87%A6%F0%9F%87%B9
 trojan://duJyVGgB2y0tCFs37Y89NE1fMHXk8C5j@177.3.220.42:443?security=tls&sni=cdn7.yabenzin.app&alpn=h2&fp=firefox&type=grpc&serviceName=TrojanGRPC#%F0%9F%87%AB%F0%9F%87%AE
