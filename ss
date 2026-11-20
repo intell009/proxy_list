@@ -38,8 +38,3 @@ vless://50414e45-4c5f-5a45-5553-6b297c3f248c@31.12.75.100:8080?encryption=none&t
 vless://50414e45-4c5f-5a45-5553-6b297c3f248c@104.17.37.71:8880?encryption=none&type=ws&host=khzu6eezu32s.oczuloepuy8s.workers.dev&path=/stream/PANEL_ZEUS/6b297c3f248c&packetEncoding=xudp#%F0%9F%87%AB%F0%9F%87%B7-0038
 vless://50414e45-4c5f-5a45-5553-6b297c3f248c@45.131.210.73:2052?encryption=none&type=ws&host=khzu6eezu32s.oczuloepuy8s.workers.dev&path=/stream/PANEL_ZEUS/6b297c3f248c&packetEncoding=xudp#%F0%9F%87%AB%F0%9F%87%B7-0039
 vless://50414e45-4c5f-5a45-5553-6b297c3f248c@31.12.75.100:80?encryption=none&type=ws&host=khzu6eezu32s.oczuloepuy8s.workers.dev&path=/stream/PANEL_ZEUS/6b297c3f248c&packetEncoding=xudp#%F0%9F%87%AB%F0%9F%87%B7-0040
-
-ss://YWVzLTI1Ni1nY206Y0NNSmdKVEEzQkE0ODlZVVlyRnE3WEhYU2lTcFdsTGE=@46.17.47.246:18443#%F0%9F%87%BA%F0%9F%87%B3
-ss://2022-blake3-chacha20-poly1305:8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=@47.245.170.82:443#%F0%9F%87%A9%F0%9F%87%AA
-ss://2022-blake3-chacha20-poly1305:8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=@47.245.170.82:443#%F0%9F%87%A9%F0%9F%87%AA
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpXNFc2VDdUaC14MGl2bDA2WWt4WVZCcjZiVExzSXRWQw==@ger2.soft98ver2.com:305#%F0%9F%87%AE%F0%9F%87%B7
